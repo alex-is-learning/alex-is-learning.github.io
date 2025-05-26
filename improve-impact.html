@@ -22,8 +22,48 @@
       <a href="improve-health.html">Improve Health</a>
       <a href="improve-wellbeing.html">Improve Wellbeing</a>
     </nav>
-    <h1>Improve Impact</h1>
-    <p>Write about your work to improve impact here.</p>
+    <h1>1. Improve Impact</h1>
+    <ul>
+      <li>At the moment my main sprint is getting a full-time job in the Effective Altruist space.</li>
+      <li>I'm orienting to jobs with the long-term goal of becoming a Chief of Staff or Chief Operating Officer.</li>
+      <li>I have the long-term north star of "I could be a high-impact leader".</li>
+      <li>Whilst applying for roles, I'm upskilling in AI security, biosecurity and nuclear.</li>
+    </ul>
+    <h2>My AI Safety Learning Progress</h2>
+    <p>
+        Cumulative hours spent: <span id="beeminder-hours">Loading...</span>
+    </p>
+    <iframe src="https://www.beeminder.com/widget?slug=2-ai-safety&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    <script>
+        const username = "alexislearning"; // Your Beeminder username
+        const goalSlug = "2-ai-safety";    // Your goal slug from the iframe
+
+        // Construct the API URL
+        const apiUrl = `https://www.beeminder.com/api/v1/users/${username}/goals/${goalSlug}.json`;
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const cumulativeHours = data.curval;
+                const displayElement = document.getElementById("beeminder-hours");
+                if (cumulativeHours !== undefined) {
+                    displayElement.textContent = cumulativeHours.toFixed(2);
+                } else {
+                    displayElement.textContent = "Data not available";
+                    console.log("Could not find cumulative hours in API response:", data);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching Beeminder data:", error);
+                const displayElement = document.getElementById("beeminder-hours");
+                displayElement.textContent = "Error loading data.";
+            });
+    </script>
   </div>
 </body>
 </html>
