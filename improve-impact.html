@@ -15,12 +15,13 @@
       <span style="margin-left:10px;">alexanderlarge@githubpages:~$</span>
     </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="improve-thinking.html">Improve Thinking</a>
-      <a href="improve-systems.html">Improve Systems</a>
-      <a href="improve-friendships.html">Improve Friendships</a>
-      <a href="improve-health.html">Improve Health</a>
-      <a href="improve-wellbeing.html">Improve Wellbeing</a>
+      <a href="index.html">&#8962; Home</a><br>
+      <a href="improve-impact.html">1. Improve Impact</a><br>
+      <a href="improve-thinking.html">2. Improve Thinking</a><br>
+      <a href="improve-systems.html">3. Improve Systems</a><br>
+      <a href="improve-friendships.html">4. Improve Friendships</a><br>
+      <a href="improve-health.html">5. Improve Health</a><br>
+      <a href="improve-wellbeing.html">6. Improve Wellbeing</a>
     </nav>
     <h1>1. Improve Impact</h1>
     <ul>
@@ -29,12 +30,32 @@
       <li>I have the long-term north star of "I could be a high-impact leader".</li>
       <li>Whilst applying for roles, I'm upskilling in AI security, biosecurity and nuclear.</li>
     </ul>
-<h2>My AI Safety Learning Progress</h2>
+<hr>
+<h2>Applying for jobs</h2>
+<p>If I could show my total hours here it'd be a bunch! I've been working on job applications and pitches since late Feb of 2025.</p>
+<hr>
+<h2>AI Safety Upskilling</h2>
 <p>
     Cumulative hours spent: <span id="beeminder-hours">Loading...</span>
 </p>
 <iframe src="https://www.beeminder.com/widget?slug=impact--ai-safety&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-
+<p>This currently looks like:</p>
+<ul>Reading and making flashcards from the "Introduction to AI Safety, Ethics, and Society" textbook</ul>
+<ul>Doing the Bluedot "AI Safety Operations" bootcamp</ul>
+<hr>
+    <div class="beeminder-goal-section">
+      <h2 id="goal-title-impact--publc-wrtng">Public Writing</h2>
+      <p>Cumulative hours: <span id="beeminder-hours-impact--publc-wrtng">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=impact--publc-wrtng&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+    <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+      Last updated: <span id="last-updated"></span>
+    </p>
+    <script>
+      document.getElementById('last-updated').textContent =
+        new Date(document.lastModified).toLocaleDateString();
+    </script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const dataFilePath = './assets/data/beeminder_goals_data.json'; // Path to your local data file

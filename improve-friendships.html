@@ -25,6 +25,13 @@
     </nav>
     <h1>4. Improve Friendships</h1>
     <p>Write about your work to improve friendships here.</p>
+    <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+      Last updated: <span id="last-updated"></span>
+    </p>
+    <script>
+      document.getElementById('last-updated').textContent =
+        new Date(document.lastModified).toLocaleDateString();
+    </script>
   </div>
 </body>
 </html>

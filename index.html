@@ -15,9 +15,9 @@
       <span style="margin-left:10px;">https://alex-is-learning.github.io/ $</span>
     </div>
     <h1>Welcome to my website!</h1>
-    <p>Hello, my name's Alex</p>
-    <p>I wanted to make a basic website to show what I'm up to these days.</p>
-
+    <p>Hello, my name's Alex.</p>
+    <img src="me%20in%20the%20matrix%20hehehe.png" alt="Alex in the Matrix" style="display:block;margin:16px auto 16px auto;max-width:220px;border-radius:8px;box-shadow:0 0 8px #000;">
+    <p>How cool is this retro theme!? Thanks Copilot.</p>
     <h2>Below are my 6 strategic priorities</h2>
     <nav>
       <a href="improve-impact.html">1. Improve Impact</a><br>
@@ -27,6 +27,22 @@
       <a href="improve-health.html">5. Improve Health</a><br>
       <a href="improve-wellbeing.html">6. Improve Wellbeing</a>
     </nav>
+    <hr>
+    <div style="margin-top: 24px;">
+      <a href="https://drive.google.com/file/d/1Qcy87Tmqnfye1DHysBf2lcdVHTNUFVjk/view" target="_blank">Resume</a> |
+      <a href="https://www.linkedin.com/in/alexanderklarge/" target="_blank">LinkedIn</a> |
+      <a href="https://alexislearning.substack.com" target="_blank">Substack</a> |
+      <a href="https://twitter.com/alexislearning" target="_blank">Twitter</a> |
+      <a href="https://www.youtube.com/@alexiscreatingthings" target="_blank">YouTube</a> |
+      <a href="https://github.com/alex-is-learning" target="_blank">GitHub</a>
+    </div>
+    <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+      Last updated: <span id="last-updated"></span>
+    </p>
+    <script>
+      document.getElementById('last-updated').textContent =
+        new Date(document.lastModified).toLocaleDateString();
+    </script>
   </div>
 </body>
 </html>

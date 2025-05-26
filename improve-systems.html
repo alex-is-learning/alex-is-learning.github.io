@@ -25,6 +25,88 @@
     </nav>
     <h1>3. Improve Systems</h1>
     <p>Write about your work to improve systems here.</p>
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-systems--touch-typ">Touch Typing Practice</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-systems--touch-typ">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=systems--touch-typ&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-systems--vim">Vim Practice</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-systems--vim">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=systems--vim&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+      Last updated: <span id="last-updated"></span>
+    </p>
+    <script>
+      document.getElementById('last-updated').textContent =
+        new Date(document.lastModified).toLocaleDateString();
+    </script>
   </div>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const dataFilePath = './assets/data/beeminder_goals_data.json';
+        const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+        const systemsPageGoalSlugs = [
+          "systems--touch-typ",
+          "systems--vim"
+        ];
+        fetch(cacheBustUrl)
+          .then(response => {
+            if (!response.ok) {
+              console.warn(`Could not fetch ${dataFilePath}. Status: ${response.status}`);
+              throw new Error(`Network response was not ok: ${response.statusText} - ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(allGoalData => {
+            systemsPageGoalSlugs.forEach(slug => {
+              const hoursElementId = `beeminder-hours-${slug}`;
+              const titleElementId = `goal-title-${slug}`;
+              const hoursDisplayElement = document.getElementById(hoursElementId);
+              const titleDisplayElement = document.getElementById(titleElementId);
+              if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+                const goalData = allGoalData[slug];
+                if (hoursDisplayElement && goalData.current_value !== undefined) {
+                  hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
+                } else if (hoursDisplayElement) {
+                  hoursDisplayElement.textContent = 'N/A';
+                }
+                if (titleDisplayElement && goalData.goal_title) {
+                  titleDisplayElement.textContent = goalData.goal_title;
+                }
+              } else {
+                if (hoursDisplayElement) {
+                  hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+                }
+                if (titleDisplayElement && allGoalData[slug] && allGoalData[slug].goal_title) {
+                  titleDisplayElement.textContent = allGoalData[slug].goal_title;
+                } else if (titleDisplayElement && allGoalData[slug] && !allGoalData[slug].goal_title) {
+                  titleDisplayElement.textContent = slug;
+                } else if (titleDisplayElement) {
+                  titleDisplayElement.textContent = slug;
+                }
+                if (allGoalData[slug] && allGoalData[slug].error) {
+                  console.warn(`Error noted in data for goal ${slug}: ${allGoalData[slug].error}`);
+                } else {
+                  console.warn(`Data for slug "${slug}" not found in JSON or current_value missing.`);
+                }
+              }
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching or processing local Beeminder goals data:', error);
+            systemsPageGoalSlugs.forEach(slug => {
+              const hoursElementId = `beeminder-hours-${slug}`;
+              const titleElementId = `goal-title-${slug}`;
+              const hoursDisplayElement = document.getElementById(hoursElementId);
+              if (hoursDisplayElement) {
+                hoursDisplayElement.textContent = 'Error';
+              }
+            });
+          });
+      });
+    </script>
 </body>
 </html>
