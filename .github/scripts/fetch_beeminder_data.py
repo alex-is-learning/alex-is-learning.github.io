@@ -1,5 +1,8 @@
 # ... (import statements and other parts of the script remain the same) ...
-
+import os  
+import requests
+import json
+from datetime import datetime
 # --- Configuration ---
 BEEMINDER_USERNAME = "alexislearning"
 # THIS WILL BECOME A LIST OF YOUR GOAL SLUGS

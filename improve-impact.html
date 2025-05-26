@@ -29,41 +29,58 @@
       <li>I have the long-term north star of "I could be a high-impact leader".</li>
       <li>Whilst applying for roles, I'm upskilling in AI security, biosecurity and nuclear.</li>
     </ul>
-    <h2>My AI Safety Learning Progress</h2>
-    <p>
-        Cumulative hours spent: <span id="beeminder-hours">Loading...</span>
-    </p>
-    <iframe src="https://www.beeminder.com/widget?slug=2-ai-safety&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    <script>
-        const username = "alexislearning"; // Your Beeminder username
-        const goalSlug = "2-ai-safety";    // Your goal slug from the iframe
+<h2>My AI Safety Learning Progress</h2>
+<p>
+    Cumulative hours spent: <span id="beeminder-hours">Loading...</span>
+</p>
+<iframe src="https://www.beeminder.com/widget?slug=impact--ai-safety&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
 
-        // Construct the API URL
-        const apiUrl = `https://www.beeminder.com/api/v1/users/${username}/goals/${goalSlug}.json`;
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dataFilePath = './assets/data/beeminder_goals_data.json'; // Path to your local data file
+        const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime(); 
 
-        fetch(apiUrl)
+        // Slug for the AI safety goal, should match what's in your Python script & JSON file
+        const aiSafetyGoalSlug = "impact--ai-safety"; 
+
+        const displayElement = document.getElementById("beeminder-hours");
+
+        fetch(cacheBustUrl) // Fetches the LOCAL JSON FILE
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                    console.warn(`Could not fetch ${dataFilePath}. Status: ${response.status}`);
+                    throw new Error(`Network response was not ok: ${response.statusText} - ${response.status}`);
                 }
                 return response.json();
             })
-            .then(data => {
-                const cumulativeHours = data.curval;
-                const displayElement = document.getElementById("beeminder-hours");
-                if (cumulativeHours !== undefined) {
-                    displayElement.textContent = cumulativeHours.toFixed(2);
+            .then(allGoalData => {
+                console.log("Beeminder goals data loaded from local file:", allGoalData);
+
+                if (displayElement) {
+                    if (allGoalData[aiSafetyGoalSlug] && 
+                        allGoalData[aiSafetyGoalSlug].current_value !== undefined && 
+                        allGoalData[aiSafetyGoalSlug].error === undefined) {
+                        
+                        const hours = parseFloat(allGoalData[aiSafetyGoalSlug].current_value).toFixed(2);
+                        displayElement.textContent = `${hours}`; 
+                    } else if (allGoalData[aiSafetyGoalSlug] && allGoalData[aiSafetyGoalSlug].error) {
+                        displayElement.textContent = 'Error fetching goal data';
+                        console.warn(`Error for goal ${aiSafetyGoalSlug}: ${allGoalData[aiSafetyGoalSlug].error}`);
+                    } else {
+                        displayElement.textContent = 'N/A'; 
+                        console.warn(`Data for slug "${aiSafetyGoalSlug}" not found in the JSON file or was undefined.`);
+                    }
                 } else {
-                    displayElement.textContent = "Data not available";
-                    console.log("Could not find cumulative hours in API response:", data);
+                    console.warn('HTML element with ID "beeminder-hours" not found.');
                 }
             })
             .catch(error => {
-                console.error("Error fetching Beeminder data:", error);
-                const displayElement = document.getElementById("beeminder-hours");
-                displayElement.textContent = "Error loading data.";
+                console.error('Error fetching or processing local Beeminder goals data:', error);
+                if (displayElement) {
+                    displayElement.textContent = 'Error loading data.';
+                }
             });
-    </script>
-  </div>
+    });
+</script> 
 </body>
 </html>
