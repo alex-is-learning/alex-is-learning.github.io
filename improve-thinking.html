@@ -25,6 +25,168 @@
     </nav>
     <h1>2. Improve Thinking</h1>
     <p>Write about your work to improve thinking here.</p>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--self-expla">Self Explanation Practice</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--self-expla">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--self-expla&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--maths">Maths Practice</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--maths">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--maths&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--prediction">Prediction Practice</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--vervaeke">Vervaeke Study</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--vervaeke">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--vervaeke&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--boyd">Boyd Study</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--boyd">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--boyd&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--blogs">Reading Blogs</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--blogs">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--blogs&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--matuschak">Matuschak Study</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--matuschak">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--matuschak&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--wrld-model">World Model Building</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--exprt-stdy">Expert Study Methods</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--exprt-stdy">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--exprt-stdy&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+
+    <div class="beeminder-goal-section">
+      <h3 id="goal-title-thinking--heidegger">Heidegger Study</h3>
+      <p>Cumulative hours: <span id="beeminder-hours-thinking--heidegger">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=thinking--heidegger&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataFilePath = './assets/data/beeminder_goals_data.json';
+            const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+
+            // Define ONLY the slugs for the "Thinking" page
+            const thinkingPageGoalSlugs = [
+                "thinking--self-expla",
+                "thinking--maths",
+                "thinking--prediction",
+                "thinking--vervaeke",
+                "thinking--boyd",
+                "thinking--blogs",
+                "thinking--matuschak",
+                "thinking--wrld-model",
+                "thinking--exprt-stdy",
+                "thinking--heidegger"
+            ];
+
+            fetch(cacheBustUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        console.warn(`Could not fetch ${dataFilePath}. Status: ${response.status}`);
+                        throw new Error(`Network response was not ok: ${response.statusText} - ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(allGoalData => {
+                    console.log("Beeminder goals data loaded from local file:", allGoalData);
+
+                    thinkingPageGoalSlugs.forEach(slug => {
+                        const hoursElementId = `beeminder-hours-${slug}`;
+                        const titleElementId = `goal-title-${slug}`; // ID for the h3 title
+                        
+                        const hoursDisplayElement = document.getElementById(hoursElementId);
+                        const titleDisplayElement = document.getElementById(titleElementId);
+                        
+                        if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+                            const goalData = allGoalData[slug];
+
+                            if (hoursDisplayElement && goalData.current_value !== undefined) {
+                                hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
+                            } else if (hoursDisplayElement) {
+                                hoursDisplayElement.textContent = 'N/A';
+                            }
+
+                            if (titleDisplayElement && goalData.goal_title) {
+                                titleDisplayElement.textContent = goalData.goal_title; // Update title from JSON
+                            }
+
+                        } else { // Handle cases where data for slug might be missing or has an error
+                            if (hoursDisplayElement) {
+                                hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+                            }
+                            if (titleDisplayElement && allGoalData[slug] && allGoalData[slug].goal_title) {
+                                // Still display title even if there's an error with other data points
+                                titleDisplayElement.textContent = allGoalData[slug].goal_title; 
+                            } else if (titleDisplayElement && allGoalData[slug] && !allGoalData[slug].goal_title){
+                                titleDisplayElement.textContent = slug; // Fallback to slug if title is missing in error object
+                            }
+                             else if (titleDisplayElement){
+                                titleDisplayElement.textContent = slug; // Fallback to slug if no data at all for this slug
+                            }
+
+                            if (allGoalData[slug] && allGoalData[slug].error) {
+                                console.warn(`Error noted in data for goal ${slug}: ${allGoalData[slug].error}`);
+                            } else {
+                                console.warn(`Data for slug "${slug}" not found in JSON or current_value missing.`);
+                            }
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching or processing local Beeminder goals data:', error);
+                    thinkingPageGoalSlugs.forEach(slug => {
+                        const hoursElementId = `beeminder-hours-${slug}`;
+                        const titleElementId = `goal-title-${slug}`;
+                        const hoursDisplayElement = document.getElementById(hoursElementId);
+                        const titleDisplayElement = document.getElementById(titleElementId);
+
+                        if (hoursDisplayElement) {
+                            hoursDisplayElement.textContent = 'Error';
+                        }
+                        if (titleDisplayElement) {
+                            // Keep existing H3 title or set to slug if page fails to load JSON
+                            // titleDisplayElement.textContent = 'Goal Data Error'; 
+                        }
+                    });
+                });
+        });
+    </script>
   </div>
 </body>
 </html>
