@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Improve Systems</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 <body>
   <div class="terminal">
@@ -24,7 +25,13 @@
       <a href="improve-wellbeing.html">6. Improve Wellbeing</a>
     </nav>
     <h1>3. Improve Systems</h1>
-    <p>Write about your work to improve systems here.</p>
+    <div class="beeminder-goal-section">
+      <h3>Learning Vim</h3>
+      <p>I got _very_ nerdsniped by <a href="https://www.youtube.com/watch?v=sqm4-B07LsE" target="_blank" style="color:inherit;text-decoration:underline;">this video</a> and the idea of <a href="https://www.amazon.co.uk/Practical-Vim-Thought-Pragmatic-Programmers/dp/1934356980" target="_blank" style="color:inherit;text-decoration:underline;">edit[ing] text at the speed of thought</a>. Plus, it's a much more flow state-y way to interact with a computer, once you get over the initial (and formidable!) learning curve.</p>
+      <p>Cumulative hours: <span id="beeminder-hours-systems--vim">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=systems--vim&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+
     <div class="beeminder-goal-section">
       <h3>Touch Typing Practice</h3>
       <p>I'm a fast touch-typist but I'm no good with symbols, which are important for Vim. Plus I could definitely reduce my error rate!</p>
@@ -32,12 +39,43 @@
       <iframe src="https://www.beeminder.com/widget?slug=systems--touch-typ&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
     </div>
     <hr>
-    <div class="beeminder-goal-section">
-      <h3>Learning Vim</h3>
-      <p>I got _very_ nerdsniped by the idea of "writing at the speed of thought". Plus, it's a much more flow state-y way to interact with a computer, once you get over the initial (and formidable!) learning curve.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-systems--vim">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=systems--vim&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    <h1>My Setup</h1>
+    <div>
+      <h2>More on My Learning Tools</h2>
+      <p>I go into much more detail about my learning stack, including my favorite tools and workflows, on the <a href="my-learning-stack.html" style="color:inherit;text-decoration:underline;">My Learning Stack</a> page.</p>
     </div>
+    <hr> 
+    <h1>Nice workflow tools</h1>
+    <div>
+  <h3>Window Management Tool (<a href="https://nikitabobko.github.io/AeroSpace/guide" target="_blank" style="color:inherit;text-decoration:underline;">Aerospace</a> for Mac)</h3>
+  <p>This is such a game changer, I can't believe I waited so long to set this up! It lets you set up multiple workspaces (e.g., for coding, browser, Remarkable, studying with Anki & Notes, tracking with Beeminder & Toggl, messaging, email) with permanent layouts and very intuitive keyboard shortcuts. No more constant alt-tabbing, resizing windows, shutting down/reopening apps. Also features auto-resize, where opening a new file automatically slots it in, and closing it resizes the remaining windows. Makes interacting with the computer feel so much nicer, more like skillfully playing an instrument than clumsily poking around with the mouse.</p>
+</div>
+<hr>
+
+<div>
+  <h3><a href="https://espanso.org/" target="_blank" style="color:inherit;text-decoration:underline;">Espanso</a> (Text Expander Tool)</h3>
+  <p>So so good. Lets you type in terse commands and have them replaced with any text of your choosing, e.g. `:da` is replaced with today's date (2025-05-27) immediately. I also use it for recycling commands to LLMs, for example a long command to make Gemini make flashcards in the exact way I want, which I can repeat just by typing `:flash`. Also great for emojis, slack daily standup templates, symbols, etc.</p>
+</div>
+<hr>
+
+<div>
+  <h3><a href="https://textsniper.app/" target="_blank" style="color:inherit;text-decoration:underline;">TextSniper</a></h3>
+  <p>A Mac app that reproduces the "Snipping Tool" from Windows - lets you take a "screenshot" but actually it just grabs the text from that area and copies it to the clipboard. Really useful for e.g. grabbing text from lecture slides in YouTube videos.</p>
+</div>
+<hr>
+
+<div>
+  <h3><a href="https://www.alfredapp.com/" target="_blank" style="color:inherit;text-decoration:underline;">Alfred</a></h3>
+  <p>Replaces the Mac spotlight - I mainly use it for finding files much faster. Simple but useful.</div>
+<hr>
+
+<div>
+  <h3><a href="https://maccy.app/" target="_blank" style="color:inherit;text-decoration:underline;">Maccy</a></h3>
+  <p>A simple app that fixes the Mac default behaviour where you only have 1 clipboard slot, so as soon as you copy something new, whatever was just in your clipboard gets lost. Lets you access a history of copied items.</p>
+</div>
+<hr>
+
+    
     <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
       Last updated: <span id="last-updated"></span>
     </p>
