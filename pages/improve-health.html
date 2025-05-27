@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Improve Wellbeing</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Improve Health</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <div class="terminal">
@@ -15,7 +15,7 @@
       <span style="margin-left:10px;">alexanderlarge@githubpages:~$</span>
     </div>
     <nav>
-      <a href="index.html" title="Home">&#8962; Home</a><br>
+      <a href="../index.html" title="Home">&#8962; Home</a><br>
       <a href="improve-impact.html">1. Improve Impact</a><br>
       <a href="improve-thinking.html">2. Improve Thinking</a><br>
       <a href="improve-systems.html">3. Improve Systems</a><br>
@@ -23,34 +23,24 @@
       <a href="improve-health.html">5. Improve Health</a><br>
       <a href="improve-wellbeing.html">6. Improve Wellbeing</a>
     </nav>
-    <h1>6. Improve Wellbeing</h1>
-    <p>Mostly I find that working on my other goals gives me a great sense of wellbeing, e.g. learning a bunch of stuff makes me feel a great sense of forward momentum. But if I'm in "doing" mode too much, I can get a kind of frantic "there's not enough time!!!" energy, so it's also really important to have a grounding meditation practice.</p>
+    <h1>5. Improve Health</h1>
+    <p>I'm maybe 1 month into a "be in a daily 300 calorie deficit", ~50% of the way there re: my goal to lose my love handles. It's going well (thank you Chronometer!) but has left me without much energy for weight training, which kinda sucks. I'm excited to get back into it once the fat loss era is over. I've been doing jump rope as my cardio of choice and it's super super fun with music.</p>
 
     <div class="beeminder-goal-section">
-      <h3 id="goal-title-wellbeing--meditatio">Meditation Practice</h3>
-      <p>After a few months where I didn't meditate at all, I had the strongest ever "before and after" feeling from a ~20 minute sit, which made me realise how much I've been in a kind of frantic mode. I'm now meditating in a very Sasha Chapin-inspired way, essentially noticing constriction and releasing holding as much as I can. It's very relaxing and nice.</p>
-      <p><a href="https://sashachapin.substack.com/p/should-you-meditate-and-also-what?utm_source=publication-search" target="_blank">This post by Sasha</a> is what I've been following - the key quote for me is " The best I can describe it is: “the calming of the deep elemental scared animal part of you that rejects existence and the possibility of death by constantly getting lost in notions of what else should be the case.”</p>
-      <p>Cumulative hours: <span id="beeminder-hours-wellbeing--meditatio">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=wellbeing--meditatio&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+      <h3 id="goal-title-health--stretching">Daily Stretching</h3>
+      <p>I got into a really bad habit for a few weeks of waking up and immediately doing computer stuff and now I _really_ need to lock in a daily stretching practice!!!</p>
+      <p>Cumulative hours: <span id="beeminder-hours-health--stretching">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=health--stretching&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
     </div>
     <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
       Last updated: <span id="last-updated"></span>
     </p>
-    
-    <div class="beeminder-goal-section">
-      <h3>Alexander Technique</h3>
-      <p>I've been gradually making my way through Michael Ashcroft's AT course (Expanding Awareness), but I've backburnered it...</p>
-      <p>Cumulative hours: <span id="beeminder-hours-wellbeing--alex-tech">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=wellbeing--alex-tech&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const dataFilePath = './assets/data/beeminder_goals_data.json';
+        const dataFilePath = '../assets/data/beeminder_goals_data.json';
         const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
-        const wellbeingPageGoalSlugs = [
-          "health--stretching",
-          "wellbeing--alex-tech",
-          "wellbeing--meditatio"
+        const healthPageGoalSlugs = [
+          "health--stretching"
         ];
         fetch(cacheBustUrl)
           .then(response => {
@@ -61,7 +51,7 @@
             return response.json();
           })
           .then(allGoalData => {
-            wellbeingPageGoalSlugs.forEach(slug => {
+            healthPageGoalSlugs.forEach(slug => {
               const hoursElementId = `beeminder-hours-${slug}`;
               const titleElementId = `goal-title-${slug}`;
               const hoursDisplayElement = document.getElementById(hoursElementId);
@@ -97,7 +87,7 @@
           })
           .catch(error => {
             console.error('Error fetching or processing local Beeminder goals data:', error);
-            wellbeingPageGoalSlugs.forEach(slug => {
+            healthPageGoalSlugs.forEach(slug => {
               const hoursElementId = `beeminder-hours-${slug}`;
               const hoursDisplayElement = document.getElementById(hoursElementId);
               if (hoursDisplayElement) {

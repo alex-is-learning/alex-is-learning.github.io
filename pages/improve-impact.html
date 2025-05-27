@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Improve Impact</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <div class="terminal">
@@ -15,7 +15,7 @@
       <span style="margin-left:10px;">alexanderlarge@githubpages:~$</span>
     </div>
     <nav>
-      <a href="index.html">&#8962; Home</a><br>
+      <a href="../index.html" title="Home">&#8962; Home</a><br>
       <a href="improve-impact.html">1. Improve Impact</a><br>
       <a href="improve-thinking.html">2. Improve Thinking</a><br>
       <a href="improve-systems.html">3. Improve Systems</a><br>
@@ -48,6 +48,7 @@
 <hr>
     <div class="beeminder-goal-section">
       <h2 id="goal-title-impact--publc-wrtng">Public Writing</h2>
+      <p>I want to <a href="https://alexislearning.substack.com/" target="_blank">publish more blog posts</a>! I often find that I get new insights from writing, which is super cool. Also there's the sense of increasing your legibility, sharing what you're working on, etc.</p>
       <p>Cumulative hours: <span id="beeminder-hours-impact--publc-wrtng">Loading...</span></p>
       <iframe src="https://www.beeminder.com/widget?slug=impact--publc-wrtng&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
     </div>
@@ -61,17 +62,21 @@
     </script>
   <h2>Learning about the nuclear risk cause area</h2>
   <p>Sadly I didn't make a nuclear beeminder when I did my ~12 hours of study in 3 days but look, I've got &gt;400 flashcards and could wax poetic about NPT vs CTBT vs TPNW, the failures of the NPT, what the IAEA does re: article III of the NPT, how article VI is kind of a scam hence the TPNW, how philanthropic funding has ~halved, etc. Seriously let me ramble at you give me a call wait where are you going come back</p>
-  <img src="images/nuclear-flashcards.png" alt="Nuclear flashcards" style="display:block;margin:16px auto;max-width:320px;border-radius:8px;box-shadow:0 0 8px #000;">
+  <img src="../images/nuclear-flashcards.png" alt="Nuclear flashcards" style="display:block;margin:16px auto;max-width:320px;border-radius:8px;box-shadow:0 0 8px #000;">
   
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const dataFilePath = './assets/data/beeminder_goals_data.json'; // Path to your local data file
+        const dataFilePath = '../assets/data/beeminder_goals_data.json'; // Path to your local data file
         const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime(); 
 
-        // Slug for the AI safety goal, should match what's in your Python script & JSON file
-        const aiSafetyGoalSlug = "impact--ai-safety"; 
+        // Slugs for the goals
+        const aiSafetyGoalSlug = "impact--ai-safety";
+        const publicWritingGoalSlug = "impact--publc-wrtng";
 
+        // Elements for AI Safety
         const displayElement = document.getElementById("beeminder-hours");
+        // Elements for Public Writing
+        const publicWritingElement = document.getElementById("beeminder-hours-impact--publc-wrtng");
 
         fetch(cacheBustUrl) // Fetches the LOCAL JSON FILE
             .then(response => {
@@ -84,11 +89,11 @@
             .then(allGoalData => {
                 console.log("Beeminder goals data loaded from local file:", allGoalData);
 
+                // AI Safety
                 if (displayElement) {
                     if (allGoalData[aiSafetyGoalSlug] && 
                         allGoalData[aiSafetyGoalSlug].current_value !== undefined && 
                         allGoalData[aiSafetyGoalSlug].error === undefined) {
-                        
                         const hours = parseFloat(allGoalData[aiSafetyGoalSlug].current_value).toFixed(2);
                         displayElement.textContent = `${hours}`; 
                     } else if (allGoalData[aiSafetyGoalSlug] && allGoalData[aiSafetyGoalSlug].error) {
@@ -98,14 +103,30 @@
                         displayElement.textContent = 'N/A'; 
                         console.warn(`Data for slug "${aiSafetyGoalSlug}" not found in the JSON file or was undefined.`);
                     }
-                } else {
-                    console.warn('HTML element with ID "beeminder-hours" not found.');
+                }
+                // Public Writing
+                if (publicWritingElement) {
+                    if (allGoalData[publicWritingGoalSlug] && 
+                        allGoalData[publicWritingGoalSlug].current_value !== undefined && 
+                        allGoalData[publicWritingGoalSlug].error === undefined) {
+                        const hours = parseFloat(allGoalData[publicWritingGoalSlug].current_value).toFixed(2);
+                        publicWritingElement.textContent = `${hours}`; 
+                    } else if (allGoalData[publicWritingGoalSlug] && allGoalData[publicWritingGoalSlug].error) {
+                        publicWritingElement.textContent = 'Error fetching goal data';
+                        console.warn(`Error for goal ${publicWritingGoalSlug}: ${allGoalData[publicWritingGoalSlug].error}`);
+                    } else {
+                        publicWritingElement.textContent = 'N/A'; 
+                        console.warn(`Data for slug "${publicWritingGoalSlug}" not found in the JSON file or was undefined.`);
+                    }
                 }
             })
             .catch(error => {
                 console.error('Error fetching or processing local Beeminder goals data:', error);
                 if (displayElement) {
                     displayElement.textContent = 'Error loading data.';
+                }
+                if (publicWritingElement) {
+                    publicWritingElement.textContent = 'Error loading data.';
                 }
             });
     });
