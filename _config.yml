@@ -13,3 +13,7 @@ url: "https://yourusername.github.io" # Replace with your actual GitHub Pages UR
 # If your site is at username.github.io/repository-name
 # baseurl: "/repository-name" # The name of your repository
 # url: "https://yourusername.github.io"
+
+sass:
+  sass_dir: assets/css
+  style: compressed

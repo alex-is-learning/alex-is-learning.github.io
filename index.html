@@ -12,7 +12,21 @@ title: Home
   <a href="https://github.com/alex-is-learning/alex-is-learning.github.io" target="_blank">Site Code</a>
 </div>
 <h1>Hello, I'm Alex</h1>
-<img src="images/me%20in%20the%20matrix%20hehehe.png" alt="Alex in the Matrix" style="display:block;margin:16px auto 16px auto;max-width:220px;border-radius:8px;box-shadow:0 0 8px #000;">
+<div class="image-matrix-wrapper">
+  <img src="images/me%20in%20the%20matrix%20hehehe.png" alt="Alex in the Matrix" class="matrix-img-dark">
+  <img src="images/light%20mode.png" alt="Alex in Light Mode" class="matrix-img-light">
+</div>
+<script>
+  function updateMatrixImage() {
+    const isLight = document.body.classList.contains('light-mode');
+    document.querySelector('.matrix-img-dark').style.display = isLight ? 'none' : 'block';
+    document.querySelector('.matrix-img-light').style.display = isLight ? 'block' : 'none';
+  }
+  document.addEventListener('DOMContentLoaded', updateMatrixImage);
+  document.getElementById('mode-toggle').addEventListener('click', function() {
+    setTimeout(updateMatrixImage, 0);
+  });
+</script>
 <p>I'm a 28 year old from England, currently job hunting in the Effective Altruism space, and learning as much as I can (because it's fun as hell).</p>
 <h2>Below are my 6 strategic priorities</h2>
 <nav>

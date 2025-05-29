@@ -102,7 +102,7 @@ title: Improve Thinking
         const dataFilePath = '../assets/data/beeminder_goals_data.json';
         const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
 
-        // Define ONLY the slugs for the "Thinking" page
+        // Only include slugs that exist in the JSON file
         const thinkingPageGoalSlugs = [
             "thinking--self-expla",
             "thinking--maths",
@@ -129,14 +129,11 @@ title: Improve Thinking
 
                 thinkingPageGoalSlugs.forEach(slug => {
                     const hoursElementId = `beeminder-hours-${slug}`;
-                    const titleElementId = `goal-title-${slug}`; // ID for the h3 title
-                    
+                    const titleElementId = `goal-title-${slug}`;
                     const hoursDisplayElement = document.getElementById(hoursElementId);
                     const titleDisplayElement = document.getElementById(titleElementId);
-                    
                     if (allGoalData[slug] && allGoalData[slug].error === undefined) {
                         const goalData = allGoalData[slug];
-
                         if (hoursDisplayElement && goalData.current_value !== undefined) {
                             if (slug === "thinking--prediction") {
                                 hoursDisplayElement.textContent = Math.round(goalData.current_value);
@@ -146,29 +143,25 @@ title: Improve Thinking
                         } else if (hoursDisplayElement) {
                             hoursDisplayElement.textContent = 'N/A';
                         }
-
                         if (titleDisplayElement && goalData.goal_title) {
-                            titleDisplayElement.textContent = goalData.goal_title; // Update title from JSON
-                    }
-
-                    } else { // Handle cases where data for slug might be missing or has an error
+                            titleDisplayElement.textContent = goalData.goal_title;
+                        }
+                    } else {
                         if (hoursDisplayElement) {
                             hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
-                    }
-                    if (titleDisplayElement && allGoalData[slug] && allGoalData[slug].goal_title) {
-                        // Still display title even if there's an error with other data points
-                        titleDisplayElement.textContent = allGoalData[slug].goal_title; 
-                    } else if (titleDisplayElement && allGoalData[slug] && !allGoalData[slug].goal_title){
-                        titleDisplayElement.textContent = slug; // Fallback to slug if title is missing in error object
-                    }
-                     else if (titleDisplayElement){
-                        titleDisplayElement.textContent = slug; // Fallback to slug if no data at all for this slug
-                    }
-
-                    if (allGoalData[slug] && allGoalData[slug].error) {
-                        console.warn(`Error noted in data for goal ${slug}: ${allGoalData[slug].error}`);
-                    } else {
-                        console.warn(`Data for slug "${slug}" not found in JSON or current_value missing.`);
+                        }
+                        if (titleDisplayElement && allGoalData[slug] && allGoalData[slug].goal_title) {
+                            titleDisplayElement.textContent = allGoalData[slug].goal_title;
+                        } else if (titleDisplayElement && allGoalData[slug] && !allGoalData[slug].goal_title) {
+                            titleDisplayElement.textContent = slug;
+                        } else if (titleDisplayElement) {
+                            titleDisplayElement.textContent = slug;
+                        }
+                        if (allGoalData[slug] && allGoalData[slug].error) {
+                            console.warn(`Error noted in data for goal ${slug}: ${allGoalData[slug].error}`);
+                        } else {
+                            console.warn(`Data for slug "${slug}" not found in JSON or current_value missing.`);
+                        }
                     }
                 });
             })
@@ -179,13 +172,8 @@ title: Improve Thinking
                     const titleElementId = `goal-title-${slug}`;
                     const hoursDisplayElement = document.getElementById(hoursElementId);
                     const titleDisplayElement = document.getElementById(titleElementId);
-
                     if (hoursDisplayElement) {
                         hoursDisplayElement.textContent = 'Error';
-                    }
-                    if (titleDisplayElement) {
-                        // Keep existing H3 title or set to slug if page fails to load JSON
-                        // titleDisplayElement.textContent = 'Goal Data Error'; 
                     }
                 });
             });

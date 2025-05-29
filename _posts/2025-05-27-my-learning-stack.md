@@ -1,7 +1,7 @@
 ---
 layout: post
 # Basic Post Information (Essential)
-title: "My Learning Stack"
+title: "My Learning Funnel"
 date: 2025-05-27
 # Categorisation (Optional)
 # categories:
@@ -54,13 +54,13 @@ As discussed in the Speechify section. It's a really great A4-ish sized e-ink re
 ## 4. Once I've got a bit of a gestalt, make some flashcards
 A key failure mode is making flashcards too early, e.g. after you've only read 1 chapter, or watched an introductory lecture. If it's a topic that you don't know anything about, you won't have anything to hang the new concepts onto. So it's best to get a more broad overview first. This relates to the idea of the hermeneutic circle, where our understanding of atomic bits of information is informed by our understanding of the whole, and vice versa. So, it's good to do a bit of an "immersion" phase first, where you consume a bunch of stuff. Even if retention will be low, you're getting a general sense of the territory.
 
-![Hermeneutic Circle Diagram](/images/hermeneutic.png)
+![Hermeneutic Circle Diagram](/images/hermeneutic.png){: width="700px" }
 
 But anyway, once it is time to make flashcards, I use a prompt that I store in Espanso. I give the PDF to Gemini, and typing `:flash` pastes my custom prompt for having Gemini create flashcards. I can state how many I want, if I want them to be in depth or just surface level. This gives me a .txt file of flashcards, which I then edit in Vim (as so far AI is still pretty poor at knowing which parts of the flashcard should be initially hidden from view), and then I import into Anki.
 
 ## 5. Iterative learning at progressive levels of depth
 At first, you just make basic flashcards on the level concepts, then after a few days or a week, these are very "fluent" in your brain, and you can return and make more nuanced flashcards. Michael Nielsen taught me about this, here:
 
-![Michael Nielsen](/images/michael-nielsen.png)
+![Michael Nielsen](/images/michael-nielsen.png){: width="700px" }
 
 (See Michael Nielsen's [Augmenting Long Term Cognition](https://augmentingcognition.com/ltm.html).)
