@@ -191,3 +191,25 @@ title: Improve Thinking
             });
     });
 </script>
+
+<p>Cumulative hours spent: <span id="beeminder-hours-thinking">Loading...</span></p>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dataFilePath = '../assets/data/beeminder_goals_data.json';
+    const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+    const thinkingGoalSlug = "thinking--goal-slug"; // Replace with the actual slug used in your JSON
+    const displayElement = document.getElementById("beeminder-hours-thinking");
+    fetch(cacheBustUrl)
+      .then(response => response.json())
+      .then(allGoalData => {
+        if (displayElement && allGoalData[thinkingGoalSlug] && allGoalData[thinkingGoalSlug].current_value !== undefined) {
+          displayElement.textContent = parseFloat(allGoalData[thinkingGoalSlug].current_value).toFixed(2);
+        } else {
+          displayElement.textContent = 'N/A';
+        }
+      })
+      .catch(() => {
+        if (displayElement) displayElement.textContent = 'Error loading data.';
+      });
+  });
+</script>
