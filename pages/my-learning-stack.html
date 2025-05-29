@@ -1,76 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Learning Stack</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="icon" type="image/png" href="../images/favicon.png">
-</head>
-<body>
-  <div class="terminal">
-    <div class="terminal-header">
-      <span class="terminal-dot dot-red"></span>
-      <span class="terminal-dot dot-yellow"></span>
-      <span class="terminal-dot dot-green"></span>
-      <span style="margin-left:10px;">alexanderlarge@githubpages:~/my-learning-stack $</span>
-    </div>
-    <nav>
-      <a href="../index.html" title="Home">&#8962; Home</a><br>
-      <a href="improve-impact.html">1. Improve Impact</a><br>
-      <a href="improve-thinking.html">2. Improve Thinking</a><br>
-      <a href="improve-systems.html">3. Improve Systems</a><br>
-      <a href="improve-friendships.html">4. Improve Friendships</a><br>
-      <a href="improve-health.html">5. Improve Health</a><br>
-      <a href="improve-wellbeing.html">6. Improve Wellbeing</a>
-    </nav>
-    <h1>My Learning Stack</h1>
-    <p>(See also <a href="improve-systems.html" style="color:inherit;text-decoration:underline;">Improve Systems</a>)</p>
-    <p>Learning is the thing that I'm the most unusually good at. I got into "learning how to learn" by doing the online course of the same name, and since then I've developed a learning tool stack that I'm really pleased with.</p>
-    <p>In brief:</p>
-    <ul>
-      <li><strong>Note-taking:</strong> Obsidian, with the Breadcrumbs v4 plugin (essential!!)</li>
-      <li><strong>Spaced Repetition:</strong> Anki (flashcard software)</li>
-      <li><strong>AI</strong>: Gemini Deep Research for creating rabbit-hole reports</li> 
-      <li><strong>Goal and Time Tracking:</strong> Beeminder, Toggl Track</li>
-      <li><strong>Reading:</strong> reMarkable, Speechify</li>
-      <li><strong>Writing & Reflection:</strong> Neovim, Vim setup in Obsidian, Substack</li>
-    </ul>
-    <h1>The Learning Funnel</h1>
-    <h2>1. Having a Project, a Goal</h2>
-    <p>E.g., "I want to do a deep dive on <a href="https://www.beeminder.com/alexislearning/thinking--boyd" target="_blank" style="color:inherit;text-decoration:underline;">John Boyd</a>", "I want to learn about <a href="https://www.beeminder.com/alexislearning/impact--ai-safety" target="_blank" style="color:inherit;text-decoration:underline;">AI safety</a>".</p>
-    <p>I'll typically make a Beeminder and set up how many hours per week I want to commit to the project. I might also make a quick strategy document too, clarifying things like the purpose, success criteria, the "Why" of the project, how I might fail, etc. I might also make a Fatebook.io prediction like p(I'm still excited about learning [subject] in 1 month), as I can definitely fall prey to recency bias!</p>
-    <h2>2. Gather source material</h2>
-    <p>Might use Perplexity.ai to find the most highly recommended starting points, e.g. the best book/textbook.</p>
-    <h2>3. Read with Speechify and reMarkable</h2>
-    <div>
-      <h3><a href="https://speechify.com/" target="_blank" style="color:inherit;text-decoration:underline;">Speechify</a></h3>
-      <p>A tool that reads text aloud, both via PDFs and the Chrome extension. If I generate a Deep Research review on a topic, I'll then export the PDF, put it into Speechify, put it on my reMarkable tablet, and then read on the reMarkable whilst Speechify reads it out loud to me. This massively reduces time required to read, but actually IMO the most profound benefit isn't increased reading speed, it's the ability to read for much longer periods because you use significantly less willpower when something else sets the pace for you.</p>
-    </div>
+---
+layout: default
+title: My Learning Stack
+---
+<nav>
+  <a href="{{ '/' | relative_url }}" title="Home">&#8962; Home</a><br>
+  <a href="{{ '/pages/improve-impact.html' | relative_url }}">1. Improve Impact</a><br>
+  <a href="{{ '/pages/improve-thinking.html' | relative_url }}">2. Improve Thinking</a><br>
+  <a href="{{ '/pages/improve-systems.html' | relative_url }}">3. Improve Systems</a><br>
+  <a href="{{ '/pages/improve-friendships.html' | relative_url }}">4. Improve Friendships</a><br>
+  <a href="{{ '/pages/improve-health.html' | relative_url }}">5. Improve Health</a><br>
+  <a href="{{ '/pages/improve-wellbeing.html' | relative_url }}">6. Improve Wellbeing</a>
+</nav>
+<h1>My Learning Stack</h1>
+<p>(See also <a href="improve-systems.html" style="color:inherit;text-decoration:underline;">Improve Systems</a>)</p>
+<p>Learning is the thing that I'm the most unusually good at. I got into "learning how to learn" by doing the online course of the same name, and since then I've developed a learning tool stack that I'm really pleased with.</p>
+<p>In brief:</p>
+<ul>
+  <li><strong>Note-taking:</strong> Obsidian, with the Breadcrumbs v4 plugin (essential!!)</li>
+  <li><strong>Spaced Repetition:</strong> Anki (flashcard software)</li>
+  <li><strong>AI</strong>: Gemini Deep Research for creating rabbit-hole reports</li> 
+  <li><strong>Goal and Time Tracking:</strong> Beeminder, Toggl Track</li>
+  <li><strong>Reading:</strong> reMarkable, Speechify</li>
+  <li><strong>Writing & Reflection:</strong> Neovim, Vim setup in Obsidian, Substack</li>
+</ul>
+<h1>The Learning Funnel</h1>
+<h2>1. Having a Project, a Goal</h2>
+<p>E.g., "I want to do a deep dive on <a href="https://www.beeminder.com/alexislearning/thinking--boyd" target="_blank" style="color:inherit;text-decoration:underline;">John Boyd</a>", "I want to learn about <a href="https://www.beeminder.com/alexislearning/impact--ai-safety" target="_blank" style="color:inherit;text-decoration:underline;">AI safety</a>".</p>
+<p>I'll typically make a Beeminder and set up how many hours per week I want to commit to the project. I might also make a quick strategy document too, clarifying things like the purpose, success criteria, the "Why" of the project, how I might fail, etc. I might also make a Fatebook.io prediction like p(I'm still excited about learning [subject] in 1 month), as I can definitely fall prey to recency bias!</p>
+<h2>2. Gather source material</h2>
+<p>Might use Perplexity.ai to find the most highly recommended starting points, e.g. the best book/textbook.</p>
+<h2>3. Read with Speechify and reMarkable</h2>
+<div>
+  <h3><a href="https://speechify.com/" target="_blank" style="color:inherit;text-decoration:underline;">Speechify</a></h3>
+  <p>A tool that reads text aloud, both via PDFs and the Chrome extension. If I generate a Deep Research review on a topic, I'll then export the PDF, put it into Speechify, put it on my reMarkable tablet, and then read on the reMarkable whilst Speechify reads it out loud to me. This massively reduces time required to read, but actually IMO the most profound benefit isn't increased reading speed, it's the ability to read for much longer periods because you use significantly less willpower when something else sets the pace for you.</p>
+</div>
 
-    <div>
-      <h3><a href="https://remarkable.com/store/remarkable-2" target="_blank" style="color:inherit;text-decoration:underline;">reMarkable 2</a> (often used with Speechify)</h3>
-      <p>As discussed in the Speechify section. It's a really great A4-ish sized e-ink reader. Great for highlighting PDFs, scribbling in the margins. I really like how "dumb" it is, although sometimes I do wish I had an iPad. It's great for not adding to eye strain though, no backlight, e-ink screen.</p>
-    </div>
+<div>
+  <h3><a href="https://remarkable.com/store/remarkable-2" target="_blank" style="color:inherit;text-decoration:underline;">reMarkable 2</a> (often used with Speechify)</h3>
+  <p>As discussed in the Speechify section. It's a really great A4-ish sized e-ink reader. Great for highlighting PDFs, scribbling in the margins. I really like how "dumb" it is, although sometimes I do wish I had an iPad. It's great for not adding to eye strain though, no backlight, e-ink screen.</p>
+</div>
 
-    <h2>4. Once I've got a bit of a gestalt, make some flashcards</h2>
-    <p>A key failure mode is making flashcards too early, e.g. after you've only read 1 chapter, or watched an introductory lecture. If it's a topic that you don't know anything about, you won't have anything to hang the new concepts onto. So it's best to get a more broad overview first. This relates to the idea of the hermeneutic circle, where our understanding of atomic bits of information is informed by our understanding of the whole, and vice versa. So, it's good to do a bit of an "immersion" phase first, where you consume a bunch of stuff. Even if retention will be low, you're getting a general sense of the territory.</p>
-    <img src="../images/hermeneutic.png" alt="Hermeneutic Circle Diagram" style="max-width:100%;margin:12px 0 8px 0;border-radius:6px;box-shadow:0 2px 8px #0006;">
+<h2>4. Once I've got a bit of a gestalt, make some flashcards</h2>
+<p>A key failure mode is making flashcards too early, e.g. after you've only read 1 chapter, or watched an introductory lecture. If it's a topic that you don't know anything about, you won't have anything to hang the new concepts onto. So it's best to get a more broad overview first. This relates to the idea of the hermeneutic circle, where our understanding of atomic bits of information is informed by our understanding of the whole, and vice versa. So, it's good to do a bit of an "immersion" phase first, where you consume a bunch of stuff. Even if retention will be low, you're getting a general sense of the territory.</p>
+<img src="../images/hermeneutic.png" alt="Hermeneutic Circle Diagram" style="max-width:100%;margin:12px 0 8px 0;border-radius:6px;box-shadow:0 2px 8px #0006;">
 
-    <p>But anyway, once it is time to make flashcards, I use a prompt that I store in Espanso. I give the PDF to Gemini, and typing `:flash` pastes my custom prompt for having Gemini create flashcards. I can state how many I want, if I want them to be in depth or just surface level. This gives me a .txt file of flashcards, which I then edit in Vim (as so far AI is still pretty poor at knowing which parts of the flashcard should be initially hidden from view), and then I import into Anki.</p>
-    <h2>5. Iterative learning at progressive levels of depth</h2>
-    <p>At first, you just make basic flashcards on the level concepts, then after a few days or a week, these are very "fluent" in your brain, and you can return and make more nuanced flashcards. Michael Nielsen taught me about this, here:</p>
-    <img src="../images/michael-nielsen.png" alt="Michael Nielsen" style="max-width:100%;margin:12px 0 8px 0;border-radius:6px;box-shadow:0 2px 8px #0006;">
-    <p style="font-size:0.95em;margin-top:4px;">(See Michael Nielsen's <a href="https://augmentingcognition.com/ltm.html" target="_blank" style="color:inherit;text-decoration:underline;">Augmenting Long Term Cognition</a>.)</p>
-    
+<p>But anyway, once it is time to make flashcards, I use a prompt that I store in Espanso. I give the PDF to Gemini, and typing `:flash` pastes my custom prompt for having Gemini create flashcards. I can state how many I want, if I want them to be in depth or just surface level. This gives me a .txt file of flashcards, which I then edit in Vim (as so far AI is still pretty poor at knowing which parts of the flashcard should be initially hidden from view), and then I import into Anki.</p>
+<h2>5. Iterative learning at progressive levels of depth</h2>
+<p>At first, you just make basic flashcards on the level concepts, then after a few days or a week, these are very "fluent" in your brain, and you can return and make more nuanced flashcards. Michael Nielsen taught me about this, here:</p>
+<img src="../images/michael-nielsen.png" alt="Michael Nielsen" style="max-width:100%;margin:12px 0 8px 0;border-radius:6px;box-shadow:0 2px 8px #0006;">
+<p style="font-size:0.95em;margin-top:4px;">(See Michael Nielsen's <a href="https://augmentingcognition.com/ltm.html" target="_blank" style="color:inherit;text-decoration:underline;">Augmenting Long Term Cognition</a>.)</p>
 
-    <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
-      Last updated: <span id="last-updated"></span>
-    </p>
-    <script>
-      document.getElementById('last-updated').textContent =
-        new Date(document.lastModified).toLocaleDateString();
-    </script>
-  </div>
-</body>
-</html>
+
+<p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+  Last updated: <span id="last-updated"></span>
+</p>
+<script>
+  document.getElementById('last-updated').textContent =
+    new Date(document.lastModified).toLocaleDateString();
+</script>
