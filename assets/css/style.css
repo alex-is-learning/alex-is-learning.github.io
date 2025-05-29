@@ -84,24 +84,28 @@ body.light-mode h1, body.light-mode h2, body.light-mode h3 {
   position: relative;
   width: 100%;
   max-width: 220px;
-  margin: 16px auto 16px auto;
+  min-height: 220px;
+  margin: 16px auto 32px auto;
   z-index: 1;
+  display: block;
 }
 
 img.matrix-img-dark,
 img.matrix-img-light {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 0 8px #000;
-  position: relative;
   z-index: 2;
+  display: block;
+  transform: translateY(0);
 }
 
 img.matrix-img-light {
   display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 3;
 }
 body.light-mode img.matrix-img-light {

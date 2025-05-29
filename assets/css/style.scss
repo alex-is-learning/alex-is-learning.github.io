@@ -113,22 +113,26 @@ h1, h2, h3 {
   position: relative;
   width: 100%;
   max-width: 220px;
-  margin: 16px auto 16px auto;
+  min-height: 220px;
+  margin: 16px auto 32px auto;
   z-index: 1;
+  display: block;
 }
 img.matrix-img-dark,
 img.matrix-img-light {
-  width: 100%;
-  border-radius: $radius;
-  box-shadow: 0 0 8px $terminal-shadow-dark;
-  position: relative;
-  z-index: 2;
-}
-img.matrix-img-light {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: $radius;
+  box-shadow: 0 0 8px $terminal-shadow-dark;
+  z-index: 2;
+  display: block;
+  transform: translateY(0);
+}
+img.matrix-img-light {
+  display: none;
   z-index: 3;
   body.light-mode & {
     display: block;
