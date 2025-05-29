@@ -11,6 +11,38 @@ layout: default  # This tells Jekyll to first wrap this content in your default.
         • <span>by {{ page.author }}</span>
       {% endif %}
     </p>
+    {% include reading_info.html content_to_analyze=page.content %}
+    <div style="margin-bottom:1.5em;">
+      <label for="font-picker" style="font-size:0.95em;">Font: </label>
+      <select id="font-picker" style="font-size:0.95em;">
+        <option value="mono">Monospace (Terminal)</option>
+        <option value="serif">Serif</option>
+        <option value="sans">Sans-serif</option>
+      </select>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var picker = document.getElementById('font-picker');
+        var content = document.querySelector('.post-content');
+        var storageKey = 'blogFontPref';
+        var fonts = {
+          mono: "'Fira Mono', 'Consolas', 'Monaco', monospace",
+          serif: "Georgia, 'Times New Roman', Times, serif",
+          sans: "'Inter', 'Segoe UI', Arial, sans-serif"
+        };
+        // Load saved font
+        var saved = localStorage.getItem(storageKey);
+        if (saved && fonts[saved]) {
+          picker.value = saved;
+          if(content) content.style.fontFamily = fonts[saved];
+        }
+        picker.addEventListener('change', function() {
+          var val = picker.value;
+          if(content && fonts[val]) content.style.fontFamily = fonts[val];
+          localStorage.setItem(storageKey, val);
+        });
+      });
+    </script>
   </header>
 
   <div class="post-content">
@@ -31,4 +63,7 @@ layout: default  # This tells Jekyll to first wrap this content in your default.
       </li>
     </ul>
   </nav>
+  <div style="margin-top: 48px; text-align: center;">
+    <a href="{{ '/' | relative_url }}" style="color: #00ff00; font-size: 1.1em; text-decoration: underline;">&#8962; Back to Home</a>
+  </div>
 </article>

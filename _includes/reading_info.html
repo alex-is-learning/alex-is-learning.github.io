@@ -1,0 +1,15 @@
+{% assign word_count = include.content_to_analyze | number_of_words %}
+{% assign words_per_minute = 200 %}
+
+{% if word_count < words_per_minute %}
+  {% assign reading_time_display = "Less than 1 min read" %}
+{% else %}
+  {% assign reading_time_minutes = word_count | divided_by: words_per_minute %}
+  {% assign reading_time_display = reading_time_minutes | ceil | append: " min read" %}
+{% endif %}
+
+<div style="color: #777; font-size: 0.9em; margin-bottom: 1em;">
+  <span>{{ word_count }} words</span>
+  <span style="margin: 0 0.5em;">|</span>
+  <span>{{ reading_time_display }}</span>
+</div>
