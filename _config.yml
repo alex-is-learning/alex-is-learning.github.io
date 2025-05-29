@@ -1,0 +1,15 @@
+title: Your Awesome Site Title 
+description: A brief description of your site.
+# email: your.email@example.com # Optional
+
+markdown: kramdown # Common Markdown processor for Jekyll
+# theme: minima # You can add a theme later, or build from scratch
+               # If you want to use your existing CSS, you might not use a theme initially.
+
+# If your site is at username.github.io
+baseurl: "" # An empty string
+url: "https://yourusername.github.io" # Replace with your actual GitHub Pages URL
+
+# If your site is at username.github.io/repository-name
+# baseurl: "/repository-name" # The name of your repository
+# url: "https://yourusername.github.io"
