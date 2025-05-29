@@ -1,13 +1,6 @@
-# Jekyll output folder
 _site/
-
-# Caches
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-
-# If you ever use 'bundle install --path vendor/bundle'
-# vendor/bundle/
-
-# Mac system files (optional, but common)
+.bundle/
 .DS_Store
