@@ -1,0 +1,36 @@
+---
+layout: post
+
+# Basic Post Information (Essential)
+title: "title" 
+date: YYYY-MM-DD HH:MM
+
+# Categorisation (Optional)
+# categories: 
+#   - Category1
+#   - Another Category
+# Or as a single string: category: Tech
+
+# Tagging (Optional)
+# tags:
+#   - jekyll
+#   - blogging
+#   - tutorial
+
+# Featured Image (Optional - for use in your layout or social sharing cards)
+# image:
+#   path: /assets/images/posts/placeholder-image.jpg # Path relative to your site root
+#   alt: "A descriptive caption for the image"
+#   caption: "Optional image caption" # If your layout supports it
+
+# For the template file itself, to prevent it from being published:
+published: false 
+# For actual posts you want to publish, either remove this line (defaults to true) 
+# or set it to `published: true`.
+
+# - Include links `[link text](url)`
+# - Embed images `![alt text](/path/to/image.jpg)`
+---
+
+## Post Content
+Nice

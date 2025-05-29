@@ -1,210 +1,193 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Improve Thinking</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="icon" type="image/png" href="../images/favicon.png">
-</head>
-<body>
-  <div class="terminal">
-    <div class="terminal-header">
-      <span class="terminal-dot dot-red"></span>
-      <span class="terminal-dot dot-yellow"></span>
-      <span class="terminal-dot dot-green"></span>
-      <span style="margin-left:10px;">alexanderlarge@githubpages:~$</span>
-    </div>
-    <nav>
-      <a href="../index.html" title="Home">&#8962; Home</a><br>
-      <a href="improve-impact.html">1. Improve Impact</a><br>
-      <a href="improve-thinking.html">2. Improve Thinking</a><br>
-      <a href="improve-systems.html">3. Improve Systems</a><br>
-      <a href="improve-friendships.html">4. Improve Friendships</a><br>
-      <a href="improve-health.html">5. Improve Health</a><br>
-      <a href="improve-wellbeing.html">6. Improve Wellbeing</a>
-    </nav>
-    <h1>2. Improve Thinking</h1>
-    <p>Write about your work to improve thinking here.</p>
-    <hr>
+---
+layout: default
+title: Improve Thinking 
+---
+<nav>
+  <a href="{{ '/' | relative_url }}" title="Home">&#8962; Home</a><br>
+  <a href="{{ '/pages/improve-impact.html' | relative_url }}">1. Improve Impact</a><br>
+  <a href="{{ '/pages/improve-thinking.html' | relative_url }}">2. Improve Thinking</a><br>
+  <a href="{{ '/pages/improve-systems.html' | relative_url }}">3. Improve Systems</a><br>
+  <a href="{{ '/pages/improve-friendships.html' | relative_url }}">4. Improve Friendships</a><br>
+  <a href="{{ '/pages/improve-health.html' | relative_url }}">5. Improve Health</a><br>
+  <a href="{{ '/pages/improve-wellbeing.html' | relative_url }}">6. Improve Wellbeing</a>
+</nav>
+<h1>2. Improve Thinking</h1>
+<p>Write about your work to improve thinking here.</p>
+<hr>
 
-    <h2>Making Daily Predictions</h2>
-    <div class="beeminder-goal-section">
-      <h3>Predictions via Fatebook.io</h3>
-      <p>Making at least 2 predictions per day via FateBook.io. This is a great way to get calibrated over time, like p(Getting to next stage of job application), p(Successfully meditate for 15 mins every morning this week)</p>
-      <p>Cumulative predictions: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <hr>
+<h2>Making Daily Predictions</h2>
+<div class="beeminder-goal-section">
+  <h3>Predictions via Fatebook.io</h3>
+  <p>Making at least 2 predictions per day via FateBook.io. This is a great way to get calibrated over time, like p(Getting to next stage of job application), p(Successfully meditate for 15 mins every morning this week)</p>
+  <p>Cumulative predictions: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<hr>
 
-    <h2>Improving My World Model</h2>
-    <div class="beeminder-goal-section">
-      <h3>Studying John Boyd</h3>
-      <p>John Boyd absolutely rules. This has been a super generative project so far, and has involved a huge amount of rabbit-holing via Gemini Deep Research. Frans Osinga's book on John Boyd is incredible because it includes 2 chapters about the scientific Zeitgeist that he was immersed in, so I've now got a grasp of the key events of the 60s to 90s, it rules.</p>
-      <p>For example, reductionism being replaced by the organismic revolution. Karl Popper and Thomas Kuhn, the epistemological revolution. Tacit knowledge from Polanyi. Chaos and complexity theory. Complex adaptive systems. Cybernetics. The cognitive revolution! So much cool stuff.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--boyd">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--boyd&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <div class="beeminder-goal-section">
-      <h3>"Improving My World Model" catch-all project</h3> 
-      <p>I grew up in a non-intellectual household. At "A Level" (ages 16-17), I did Biology, Chemistry, English Literature and Psychology. I then did a Biomedical Sciences undergrad, and a Bioengineering Master's degree. All this to say, it's recently become really salient to me how shoddy my world model is. History, philosophy, economics, politiics... international relations, etc. The great news is that I'm very good at learning, and AI tools like deep research + Speechify mean that it's never been easier to absolutely devour information. Because my god is there a lot to consume!! I see many flashcards in my future (and I'm excited!!!)</p>
-      <p>Currently looks like learning about Microeconomics & Macroeconomics</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <div class="beeminder-goal-section">
-      <h3>Studying John Vervaeke's "Awakening from the Meaning Crisis"</h3>
-      <p>I love you John Vervaeke. Absolutely wild that he made a 50 hour lecture series on youtube that covers so much ground. I love that a serious cognitive scientist has created a resource that also delves deeply into philosophy, religion, buddhism, history, meditation, cognitive processes, it's such an incredible body of work.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--vervaeke">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--vervaeke&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <div class="beeminder-goal-section">
-      <h3>Studying Martin Heidegger</h3>
-      <p>I've deprioritised this for the time being, but I have a strong sense that Heidegger is the perfect philosopher for the current age. Thinking about how we've kind of turned ourselves into technology. Countering the Decartian (Cartesian?) notion of us being our thoughts, countering with instead the idea that we are fundementally "in the world" first and foremost (I am, therefore I think). Our thrownness, existential anxiety due to not being the basis of our own existence, interpreation and meaning-making as the core mode of being, embodied and extended cognition, etc. Really excited to dive deeper.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--heidegger">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--heidegger&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <div class="beeminder-goal-section">
-      <h3>Reading Blogs</h3>
-      <p>I use the Feedly RSS reader → took me maybe an hour to move away from Substack, but my god does it feel good to have a Feedly inbox rather than having Substacks hitting my email inbox. I subscribe to a bunch of AI news blogs (Zvi's "Don't Worry About the Vase" is the one I read most), some news ones (Tangle, News Minimalist), and some tpot-y ones.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--blogs">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--blogs&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <hr>
+<h2>Improving My World Model</h2>
+<div class="beeminder-goal-section">
+  <h3>Studying John Boyd</h3>
+  <p>John Boyd absolutely rules. This has been a super generative project so far, and has involved a huge amount of rabbit-holing via Gemini Deep Research. Frans Osinga's book on John Boyd is incredible because it includes 2 chapters about the scientific Zeitgeist that he was immersed in, so I've now got a grasp of the key events of the 60s to 90s, it rules.</p>
+  <p>For example, reductionism being replaced by the organismic revolution. Karl Popper and Thomas Kuhn, the epistemological revolution. Tacit knowledge from Polanyi. Chaos and complexity theory. Complex adaptive systems. Cybernetics. The cognitive revolution! So much cool stuff.</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--boyd">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--boyd&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<div class="beeminder-goal-section">
+  <h3>"Improving My World Model" catch-all project</h3> 
+  <p>I grew up in a non-intellectual household. At "A Level" (ages 16-17), I did Biology, Chemistry, English Literature and Psychology. I then did a Biomedical Sciences undergrad, and a Bioengineering Master's degree. All this to say, it's recently become really salient to me how shoddy my world model is. History, philosophy, economics, politiics... international relations, etc. The great news is that I'm very good at learning, and AI tools like deep research + Speechify mean that it's never been easier to absolutely devour information. Because my god is there a lot to consume!! I see many flashcards in my future (and I'm excited!!!)</p>
+  <p>Currently looks like learning about Microeconomics & Macroeconomics</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<div class="beeminder-goal-section">
+  <h3>Studying John Vervaeke's "Awakening from the Meaning Crisis"</h3>
+  <p>I love you John Vervaeke. Absolutely wild that he made a 50 hour lecture series on youtube that covers so much ground. I love that a serious cognitive scientist has created a resource that also delves deeply into philosophy, religion, buddhism, history, meditation, cognitive processes, it's such an incredible body of work.</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--vervaeke">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--vervaeke&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<div class="beeminder-goal-section">
+  <h3>Studying Martin Heidegger</h3>
+  <p>I've deprioritised this for the time being, but I have a strong sense that Heidegger is the perfect philosopher for the current age. Thinking about how we've kind of turned ourselves into technology. Countering the Decartian (Cartesian?) notion of us being our thoughts, countering with instead the idea that we are fundementally "in the world" first and foremost (I am, therefore I think). Our thrownness, existential anxiety due to not being the basis of our own existence, interpreation and meaning-making as the core mode of being, embodied and extended cognition, etc. Really excited to dive deeper.</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--heidegger">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--heidegger&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<div class="beeminder-goal-section">
+  <h3>Reading Blogs</h3>
+  <p>I use the Feedly RSS reader → took me maybe an hour to move away from Substack, but my god does it feel good to have a Feedly inbox rather than having Substacks hitting my email inbox. I subscribe to a bunch of AI news blogs (Zvi's "Don't Worry About the Vase" is the one I read most), some news ones (Tangle, News Minimalist), and some tpot-y ones.</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--blogs">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--blogs&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<hr>
 
-    <h2>Maths</h2>
-    <div class="beeminder-goal-section">
-      <h3>Doing MathAcademy.com</h3>
-      <p>I am a nerdy STEM guy who didn't do a maths A level, meaning my maths education stopped when I was like... 15? Which is insane and ridiculous. I have a sense that learning e.g. linear algebra would be useful for understanding AI more, but also maths feels like this really useful skill that I could probably use in a bunch of ways that are currently unknown to me. E.g. at the moment if I learn about economics or cybernetics or chaos theory or whatever, I just can't interact with the mathematics of these things at all. I want to be well educated!</p>
-      <p>So, I've started using MathAcademy, which is very hyped for it's thorough curriculum and knowledge graph, ensuring you don't learn advanced concepts until you've really mastered the prerequisites. Sadly this means that I'm currently doing PREALGEBRA, but I guess you can't rush greatness...</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--maths">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--maths&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <hr>
+<h2>Maths</h2>
+<div class="beeminder-goal-section">
+  <h3>Doing MathAcademy.com</h3>
+  <p>I am a nerdy STEM guy who didn't do a maths A level, meaning my maths education stopped when I was like... 15? Which is insane and ridiculous. I have a sense that learning e.g. linear algebra would be useful for understanding AI more, but also maths feels like this really useful skill that I could probably use in a bunch of ways that are currently unknown to me. E.g. at the moment if I learn about economics or cybernetics or chaos theory or whatever, I just can't interact with the mathematics of these things at all. I want to be well educated!</p>
+  <p>So, I've started using MathAcademy, which is very hyped for it's thorough curriculum and knowledge graph, ensuring you don't learn advanced concepts until you've really mastered the prerequisites. Sadly this means that I'm currently doing PREALGEBRA, but I guess you can't rush greatness...</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--maths">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--maths&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<hr>
 
-    <h2>Meta-learning</h2>
-    <div class="beeminder-goal-section">
-      <h3>Self Explanation</h3>
-        <p>The cognitive scientist Michelene Chi discovered the "self-explanation effect", where students who would explain what they've learned back to themselves did much better. This mostly looks like me going on walks where I talk to myself (or ChatGPT voice mode) about what I've been learning, to test my recall and what I still don't properly understand. The aim is to look like you're on the phone so people don't think you're crazy, thank god for airpods. I really love saying "I'm learning about xyz, please quiz me" and then doing an insane stream of consciousness ramble at ChatGPT, it rules.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--self-expla">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--self-expla&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <div class="beeminder-goal-section">
-      <h3>Learning from <a href="https://andymatuschak.org/" target="_blank" style="color:inherit;text-decoration:underline;">Andy Matuschak</a></h3>
-        <p>Andy Matuschak is doing awesome research on learning - I pay £17/month to his Patreon and want to learn more from him. His work with Michael Nielsen was foundational in my early meta-learning journey.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--matuschak">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--matuschak&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
-    <div class="beeminder-goal-section">
-      <h3>Learning about the field of Expertise Studies</h3>
-      <p>I'm slowly making my way through the <a href="https://www.amazon.co.uk/Accelerated-Expertise-Research-Applications/dp/184872652X" target="_blank" style="color:inherit;text-decoration:underline;">Accelerated Expertise</a> textbook. So far I haven't seen much that wasn't at least quickly covered in the "Learning How To Learn" online course, but it's nice to get a refresher. I'm also doing the Deep Research deep dive thing of "huh, William Chase is mentioned as a seminal learning researcher, I've never heard of him, let me make a report about him, make flashcards from that, and maybe make further reports based on that report" - a kind of recursive rabbit-holing which gives a much more rich knowledge base.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-thinking--exprt-stdy">Loading...</span></p>
-      <iframe src="https://www.beeminder.com/widget?slug=thinking--exprt-stdy&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-    </div>
+<h2>Meta-learning</h2>
+<div class="beeminder-goal-section">
+  <h3>Self Explanation</h3>
+    <p>The cognitive scientist Michelene Chi discovered the "self-explanation effect", where students who would explain what they've learned back to themselves did much better. This mostly looks like me going on walks where I talk to myself (or ChatGPT voice mode) about what I've been learning, to test my recall and what I still don't properly understand. The aim is to look like you're on the phone so people don't think you're crazy, thank god for airpods. I really love saying "I'm learning about xyz, please quiz me" and then doing an insane stream of consciousness ramble at ChatGPT, it rules.</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--self-expla">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--self-expla&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<div class="beeminder-goal-section">
+  <h3>Learning from <a href="https://andymatuschak.org/" target="_blank" style="color:inherit;text-decoration:underline;">Andy Matuschak</a></h3>
+    <p>Andy Matuschak is doing awesome research on learning - I pay £17/month to his Patreon and want to learn more from him. His work with Michael Nielsen was foundational in my early meta-learning journey.</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--matuschak">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--matuschak&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<div class="beeminder-goal-section">
+  <h3>Learning about the field of Expertise Studies</h3>
+  <p>I'm slowly making my way through the <a href="https://www.amazon.co.uk/Accelerated-Expertise-Research-Applications/dp/184872652X" target="_blank" style="color:inherit;text-decoration:underline;">Accelerated Expertise</a> textbook. So far I haven't seen much that wasn't at least quickly covered in the "Learning How To Learn" online course, but it's nice to get a refresher. I'm also doing the Deep Research deep dive thing of "huh, William Chase is mentioned as a seminal learning researcher, I've never heard of him, let me make a report about him, make flashcards from that, and maybe make further reports based on that report" - a kind of recursive rabbit-holing which gives a much more rich knowledge base.</p>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--exprt-stdy">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--exprt-stdy&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
 
-    <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
-      Last updated: <span id="last-updated"></span>
-    </p>
-    <script>
-      document.getElementById('last-updated').textContent =
-        new Date(document.lastModified).toLocaleDateString();
-    </script>
+<p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+  Last updated: <span id="last-updated"></span>
+</p>
+<script>
+  document.getElementById('last-updated').textContent =
+    new Date(document.lastModified).toLocaleDateString();
+</script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dataFilePath = '../assets/data/beeminder_goals_data.json';
-            const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dataFilePath = '../assets/data/beeminder_goals_data.json';
+        const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
 
-            // Define ONLY the slugs for the "Thinking" page
-            const thinkingPageGoalSlugs = [
-                "thinking--self-expla",
-                "thinking--maths",
-                "thinking--prediction",
-                "thinking--vervaeke",
-                "thinking--boyd",
-                "thinking--blogs",
-                "thinking--matuschak",
-                "thinking--wrld-model",
-                "thinking--exprt-stdy",
-                "thinking--heidegger"
-            ];
+        // Define ONLY the slugs for the "Thinking" page
+        const thinkingPageGoalSlugs = [
+            "thinking--self-expla",
+            "thinking--maths",
+            "thinking--prediction",
+            "thinking--vervaeke",
+            "thinking--boyd",
+            "thinking--blogs",
+            "thinking--matuschak",
+            "thinking--wrld-model",
+            "thinking--exprt-stdy",
+            "thinking--heidegger"
+        ];
 
-            fetch(cacheBustUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        console.warn(`Could not fetch ${dataFilePath}. Status: ${response.status}`);
-                        throw new Error(`Network response was not ok: ${response.statusText} - ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(allGoalData => {
-                    console.log("Beeminder goals data loaded from local file:", allGoalData);
+        fetch(cacheBustUrl)
+            .then(response => {
+                if (!response.ok) {
+                    console.warn(`Could not fetch ${dataFilePath}. Status: ${response.status}`);
+                    throw new Error(`Network response was not ok: ${response.statusText} - ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(allGoalData => {
+                console.log("Beeminder goals data loaded from local file:", allGoalData);
 
-                    thinkingPageGoalSlugs.forEach(slug => {
-                        const hoursElementId = `beeminder-hours-${slug}`;
-                        const titleElementId = `goal-title-${slug}`; // ID for the h3 title
-                        
-                        const hoursDisplayElement = document.getElementById(hoursElementId);
-                        const titleDisplayElement = document.getElementById(titleElementId);
-                        
-                        if (allGoalData[slug] && allGoalData[slug].error === undefined) {
-                            const goalData = allGoalData[slug];
+                thinkingPageGoalSlugs.forEach(slug => {
+                    const hoursElementId = `beeminder-hours-${slug}`;
+                    const titleElementId = `goal-title-${slug}`; // ID for the h3 title
+                    
+                    const hoursDisplayElement = document.getElementById(hoursElementId);
+                    const titleDisplayElement = document.getElementById(titleElementId);
+                    
+                    if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+                        const goalData = allGoalData[slug];
 
-                            if (hoursDisplayElement && goalData.current_value !== undefined) {
-                                if (slug === "thinking--prediction") {
-                                    hoursDisplayElement.textContent = Math.round(goalData.current_value);
-                                } else {
-                                    hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
-                                }
-                            } else if (hoursDisplayElement) {
-                                hoursDisplayElement.textContent = 'N/A';
-                            }
-
-                            if (titleDisplayElement && goalData.goal_title) {
-                                titleDisplayElement.textContent = goalData.goal_title; // Update title from JSON
-                            }
-
-                        } else { // Handle cases where data for slug might be missing or has an error
-                            if (hoursDisplayElement) {
-                                hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
-                            }
-                            if (titleDisplayElement && allGoalData[slug] && allGoalData[slug].goal_title) {
-                                // Still display title even if there's an error with other data points
-                                titleDisplayElement.textContent = allGoalData[slug].goal_title; 
-                            } else if (titleDisplayElement && allGoalData[slug] && !allGoalData[slug].goal_title){
-                                titleDisplayElement.textContent = slug; // Fallback to slug if title is missing in error object
-                            }
-                             else if (titleDisplayElement){
-                                titleDisplayElement.textContent = slug; // Fallback to slug if no data at all for this slug
-                            }
-
-                            if (allGoalData[slug] && allGoalData[slug].error) {
-                                console.warn(`Error noted in data for goal ${slug}: ${allGoalData[slug].error}`);
+                        if (hoursDisplayElement && goalData.current_value !== undefined) {
+                            if (slug === "thinking--prediction") {
+                                hoursDisplayElement.textContent = Math.round(goalData.current_value);
                             } else {
-                                console.warn(`Data for slug "${slug}" not found in JSON or current_value missing.`);
+                                hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
                             }
+                        } else if (hoursDisplayElement) {
+                            hoursDisplayElement.textContent = 'N/A';
                         }
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching or processing local Beeminder goals data:', error);
-                    thinkingPageGoalSlugs.forEach(slug => {
-                        const hoursElementId = `beeminder-hours-${slug}`;
-                        const titleElementId = `goal-title-${slug}`;
-                        const hoursDisplayElement = document.getElementById(hoursElementId);
-                        const titleDisplayElement = document.getElementById(titleElementId);
 
+                        if (titleDisplayElement && goalData.goal_title) {
+                            titleDisplayElement.textContent = goalData.goal_title; // Update title from JSON
+                    }
+
+                    } else { // Handle cases where data for slug might be missing or has an error
                         if (hoursDisplayElement) {
-                            hoursDisplayElement.textContent = 'Error';
-                        }
-                        if (titleDisplayElement) {
-                            // Keep existing H3 title or set to slug if page fails to load JSON
-                            // titleDisplayElement.textContent = 'Goal Data Error'; 
-                        }
-                    });
+                            hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+                    }
+                    if (titleDisplayElement && allGoalData[slug] && allGoalData[slug].goal_title) {
+                        // Still display title even if there's an error with other data points
+                        titleDisplayElement.textContent = allGoalData[slug].goal_title; 
+                    } else if (titleDisplayElement && allGoalData[slug] && !allGoalData[slug].goal_title){
+                        titleDisplayElement.textContent = slug; // Fallback to slug if title is missing in error object
+                    }
+                     else if (titleDisplayElement){
+                        titleDisplayElement.textContent = slug; // Fallback to slug if no data at all for this slug
+                    }
+
+                    if (allGoalData[slug] && allGoalData[slug].error) {
+                        console.warn(`Error noted in data for goal ${slug}: ${allGoalData[slug].error}`);
+                    } else {
+                        console.warn(`Data for slug "${slug}" not found in JSON or current_value missing.`);
+                    }
                 });
-        });
-    </script>
-  </div>
-</body>
-</html>
+            })
+            .catch(error => {
+                console.error('Error fetching or processing local Beeminder goals data:', error);
+                thinkingPageGoalSlugs.forEach(slug => {
+                    const hoursElementId = `beeminder-hours-${slug}`;
+                    const titleElementId = `goal-title-${slug}`;
+                    const hoursDisplayElement = document.getElementById(hoursElementId);
+                    const titleDisplayElement = document.getElementById(titleElementId);
+
+                    if (hoursDisplayElement) {
+                        hoursDisplayElement.textContent = 'Error';
+                    }
+                    if (titleDisplayElement) {
+                        // Keep existing H3 title or set to slug if page fails to load JSON
+                        // titleDisplayElement.textContent = 'Goal Data Error'; 
+                    }
+                });
+            });
+    });
+</script>

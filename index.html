@@ -1,0 +1,49 @@
+---
+layout: default
+title: Home
+---
+<div style="margin-top: 8px; margin-bottom: 24px;">
+  <a href="files/resume.pdf" target="_blank">Resume</a> |
+  <a href="https://www.linkedin.com/in/alexanderklarge/" target="_blank">LinkedIn</a> |
+  <a href="https://alexislearning.substack.com" target="_blank">Substack</a> |
+  <a href="https://twitter.com/alexislearning" target="_blank">Twitter</a> |
+  <a href="https://www.youtube.com/@alexiscreatingthings" target="_blank">YouTube</a> |
+  <a href="https://github.com/alex-is-learning/alex-is-learning.github.io" target="_blank">This Site's Code</a>
+</div>
+<h1>Hello, I'm Alex</h1>
+<img src="images/me%20in%20the%20matrix%20hehehe.png" alt="Alex in the Matrix" style="display:block;margin:16px auto 16px auto;max-width:220px;border-radius:8px;box-shadow:0 0 8px #000;">
+<p>I'm a 28 year old from England, currently job hunting in the Effective Altruism space, and learning as much as I can (because it's fun as hell).</p>
+<h2>Below are my 6 strategic priorities</h2>
+<nav>
+  <a href="{{ '/pages/improve-impact.html' | relative_url }}">1. Improve Impact</a><br>
+  <a href="{{ '/pages/improve-thinking.html' | relative_url }}">2. Improve Thinking</a><br>
+  <a href="{{ '/pages/improve-systems.html' | relative_url }}">3. Improve Systems</a><br>
+  <a href="{{ '/pages/improve-friendships.html' | relative_url }}">4. Improve Friendships</a><br>
+  <a href="{{ '/pages/improve-health.html' | relative_url }}">5. Improve Health</a><br>
+  <a href="{{ '/pages/improve-wellbeing.html' | relative_url }}">6. Improve Wellbeing</a>
+</nav>
+<h2>And here's some other stuff</h2>
+<ul>
+  <li><a href="{{ '/pages/my-learning-stack.html' | relative_url }}">My learning stack</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1GORGyGXHnXKg16J26YqxxMr8TqTzxxVzUcpJZWUAxuI/edit?slide=id.p#slide=id.p">My guide to tpot</a> (slide deck from Jan 2024)</li>
+  <li><a href="{{ '/pages/references.html' | relative_url }}">References from managers and friends</a></li>
+</ul>
+<hr>
+<h2>Recent Blog Posts</h2>
+<ul>
+  {% assign recent_posts = site.posts | slice: 0, 5 %}
+  {% for post in recent_posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> <span style="color:#00ff00;font-size:0.9em;">({{ post.date | date: "%b %-d, %Y" }})</span></li>
+  {% endfor %}
+  {% if recent_posts == empty %}
+    <li><em>No blog posts yet. Stay tuned!</em></li>
+  {% endif %}
+</ul>
+<hr>
+<p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+  Last updated: <span id="last-updated"></span>
+</p>
+<script>
+  document.getElementById('last-updated').textContent =
+    new Date(document.lastModified).toLocaleDateString();
+</script>
