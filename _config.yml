@@ -21,3 +21,5 @@ sass:
 collections:
   posts:
     permalink: /blog/:slug/
+
+timezone: Europe/London
