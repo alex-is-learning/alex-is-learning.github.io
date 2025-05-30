@@ -45,10 +45,11 @@ title: Home
 </ul>
 <hr>
 <h2>Blog Posts</h2>
-{% assign sorted_posts = site.posts | sort: 'date' %}
+{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
 <ul class="post-list">
+  {% assign total_posts = sorted_posts | size %}
   {% for post in sorted_posts %}
-    {% assign post_number = forloop.index | plus: 0 %}
+    {% assign post_number = total_posts | minus: forloop.index0 %}
     {% assign padded_number = post_number | prepend: '00' | slice: -3, 3 %}
     <li>
       <a href="{{ post.url | relative_url }}">

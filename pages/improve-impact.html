@@ -33,6 +33,13 @@ title: Improve Impact
       <iframe src="https://www.beeminder.com/widget?slug=impact--publc-wrtng&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
     </div>
     <hr>
+    <div class="beeminder-goal-section">
+      <h2 id="goal-title-impact--blog-post">Blog Post Writing</h2>
+      <p>I've solved the "I love writing and find that writing in public is way more effective than writing in my Obsidian vault or whatever" issue!!! The trick is to have a "silent" blog on this site, which, unlike Substack, doesn't email people when I hit publish. Feels like the perfect Middle Way.</p>
+      <p>Cumulative hours: <span id="beeminder-hours-impact--blog-post">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=impact--blog-post&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
     <h2>Learning about the nuclear risk cause area</h2>
   <p>Sadly I didn't make a nuclear beeminder when I did my ~12 hours of study in 3 days but look, I've got &gt;400 flashcards and could wax poetic about NPT vs CTBT vs TPNW, the failures of the NPT, what the IAEA does re: article III of the NPT, how article VI is kind of a scam hence the TPNW, how philanthropic funding has ~halved, etc. Seriously let me ramble at you give me a call wait where are you going come back</p>
   <img src="../images/nuclear-flashcards.png" alt="Nuclear flashcards" style="display:block;margin:16px auto;max-width:320px;border-radius:8px;box-shadow:0 0 8px #000;">
@@ -54,11 +61,14 @@ title: Improve Impact
         // Slugs for the goals
         const aiSafetyGoalSlug = "impact--ai-safety";
         const publicWritingGoalSlug = "impact--publc-wrtng";
+        const blogPostGoalSlug = "impact--blog-post";
 
         // Elements for AI Safety
         const displayElement = document.getElementById("beeminder-hours");
         // Elements for Public Writing
         const publicWritingElement = document.getElementById("beeminder-hours-impact--publc-wrtng");
+        // Elements for Blog Post Writing
+        const blogPostElement = document.getElementById("beeminder-hours-impact--blog-post");
 
         fetch(cacheBustUrl) // Fetches the LOCAL JSON FILE
             .then(response => {
@@ -101,6 +111,21 @@ title: Improve Impact
                         console.warn(`Data for slug "${publicWritingGoalSlug}" not found in the JSON file or was undefined.`);
                     }
                 }
+                // Blog Post Writing
+                if (blogPostElement) {
+                    if (allGoalData[blogPostGoalSlug] && 
+                        allGoalData[blogPostGoalSlug].current_value !== undefined && 
+                        allGoalData[blogPostGoalSlug].error === undefined) {
+                        const hours = parseFloat(allGoalData[blogPostGoalSlug].current_value).toFixed(2);
+                        blogPostElement.textContent = `${hours}`; 
+                    } else if (allGoalData[blogPostGoalSlug] && allGoalData[blogPostGoalSlug].error) {
+                        blogPostElement.textContent = 'Error fetching goal data';
+                        console.warn(`Error for goal ${blogPostGoalSlug}: ${allGoalData[blogPostGoalSlug].error}`);
+                    } else {
+                        blogPostElement.textContent = 'N/A'; 
+                        console.warn(`Data for slug "${blogPostGoalSlug}" not found in the JSON file or was undefined.`);
+                    }
+                }
             })
             .catch(error => {
                 console.error('Error fetching or processing local Beeminder goals data:', error);
@@ -109,6 +134,9 @@ title: Improve Impact
                 }
                 if (publicWritingElement) {
                     publicWritingElement.textContent = 'Error loading data.';
+                }
+                if (blogPostElement) {
+                    blogPostElement.textContent = 'Error loading data.';
                 }
             });
     });

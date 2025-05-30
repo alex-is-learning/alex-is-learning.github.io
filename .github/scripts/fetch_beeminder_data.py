@@ -22,7 +22,11 @@ GOAL_SLUGS_TO_FETCH = [
     "thinking--wrld-model",
     "impact--ai-safety", # Ensure this is the correct current slug for AI Safety
     "thinking--exprt-stdy",
-    "thinking--heidegger"
+    "thinking--heidegger",
+    # New goals below
+    "health--weights",
+    "heath--jump-rope",
+    "impact--blog-post"
 ]
 # The auth token will be read from GitHub Secrets (environment variable)
 BEEMINDER_AUTH_TOKEN = os.environ.get("BEEMINDER_AUTH_TOKEN")

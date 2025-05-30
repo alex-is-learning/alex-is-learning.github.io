@@ -12,6 +12,21 @@ title: Improve Health
   <p>Cumulative hours: <span id="beeminder-hours-health--stretching">Loading...</span></p>
   <iframe src="https://www.beeminder.com/widget?slug=health--stretching&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
 </div>
+
+<div class="beeminder-goal-section">
+  <h3 id="goal-title-health--weights">Weight Training</h3>
+  <p>I was enjoying doing ~40 minute long calisthenics workouts, but now I'm doing 1900 calories a day I feel SO much weaker, it's insane. So I'm aiming for 10 mins a day just to keep healthy</p>
+  <p>Cumulative hours: <span id="beeminder-hours-health--weights">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=health--weights&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+
+<div class="beeminder-goal-section">
+  <h3 id="goal-title-heath--jump-rope">Jump Rope</h3>
+  <p>As with weights, I'm been doing this for longer than the beeminder shows, but oh well. I discovered a few months ago that jump rope is by far my favourite cardio (maybe tied with swimming). It's super fun to do with music once you've learned a few moves and found some songs at the right BPM, and it's incredibly efficient - I'm dead after like 15 minutes. Heart rate gets up to like 185bpm so it's the perfect HIIT workout, whilst being super portable/convenient. Just watch out for shin splints!!!</p>
+  <p>Cumulative hours: <span id="beeminder-hours-heath--jump-rope">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=heath--jump-rope&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+
 <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
   Last updated: <span id="last-updated"></span>
 </p>
@@ -20,7 +35,9 @@ title: Improve Health
     const dataFilePath = '../assets/data/beeminder_goals_data.json';
     const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
     const healthPageGoalSlugs = [
-      "health--stretching"
+      "health--stretching",
+      "health--weights",
+      "heath--jump-rope"
     ];
     fetch(cacheBustUrl)
       .then(response => {
