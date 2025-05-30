@@ -15,7 +15,7 @@ url: "https://yourusername.github.io" # Replace with your actual GitHub Pages UR
 # url: "https://yourusername.github.io"
 
 sass:
-  sass_dir: assets/css
+  sass_dir: _sass
   style: compressed
 
 collections:
