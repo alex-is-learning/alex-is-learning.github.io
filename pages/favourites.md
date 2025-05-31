@@ -26,6 +26,14 @@ title: Favourites
 - I also really like, let's see... Fiona Apple, D'Angelo, Radiohead/The Smile, Adrienne Lenker/Big Thief, Hop Along, Ben Howard, Bon Iver, Bay Faction, The Strokes/The Voidz!!!
 - I had a huge music nerd era and it's sadly died away because I can't work to music and I don't have a car, and podcasts have subsumed music during down time. Looking forward to returning and catching up on all the stuff I've missed out on!!
 
+<img src="../images/favourites/5x5.jpeg" alt="5x5 grid of favourite albums" style="max-width: 100%; height: auto; display: block; margin: 18px auto; border-radius: 8px; box-shadow: 0 2px 12px #0004;" />
+
+- My 25 most listened to albums, via LastFM
+
+<img src="../images/favourites/10x10.jpeg" alt="10x10 grid of favourite albums" style="max-width: 100%; height: auto; display: block; margin: 18px auto; border-radius: 8px; box-shadow: 0 2px 12px #0004;" />
+
+- My 100 most listened to albums, via LastFM
+
 ## Favourite podcasts
 - Comedy podcasts have been my "guilty pleasure" for years, only recently converted to non-guilty, because it's important to have chill downtime (I just can't listen to nonfiction podcasts or audiobooks in my non-work hours)
 - I absolutely love My Dad Wrote a Porno, although I sadly have listened to it so many times that it's lost its sheen
