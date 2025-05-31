@@ -27,6 +27,13 @@ title: Improve Health
   <iframe src="https://www.beeminder.com/widget?slug=heath--jump-rope&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
 </div>
 
+<div class="beeminder-goal-section">
+  <h3 id="goal-title-health--steps">Steps</h3>
+  <p><!-- Write about your steps goal here --></p>
+  <p>Cumulative hours: <span id="beeminder-hours-health--steps">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=health--steps&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+
 <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
   Last updated: <span id="last-updated"></span>
 </p>
@@ -37,7 +44,8 @@ title: Improve Health
     const healthPageGoalSlugs = [
       "health--stretching",
       "health--weights",
-      "heath--jump-rope"
+      "heath--jump-rope",
+      "health--steps"
     ];
     fetch(cacheBustUrl)
       .then(response => {
