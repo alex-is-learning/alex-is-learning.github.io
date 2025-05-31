@@ -150,3 +150,52 @@ a {
     }
   }
 }
+
+// Code block styling
+pre, code {
+  font-family: $font-mono;
+}
+
+pre {
+  background: #222;
+  color: #00ff00;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin: 18px 0;
+  font-size: 1em;
+  overflow-x: auto;
+  border: 1.5px solid #444;
+  box-shadow: 0 2px 12px #0008;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+body.light-mode pre {
+  background: #f0f0f0;
+  color: #008000;
+  border: 1.5px solid #bbb;
+  box-shadow: 0 2px 12px #bbb8;
+}
+
+code {
+  background: #232323;
+  color: #00ff00;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.98em;
+  word-break: break-word;
+}
+
+body.light-mode code {
+  background: #e0e0e0;
+  color: #008000;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

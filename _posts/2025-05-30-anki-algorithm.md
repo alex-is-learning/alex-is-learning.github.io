@@ -14,7 +14,7 @@ inelegant or ineffective (the idea of brute force learning), and/or cumbersome
 them, and eventually throwing them away).
 
 Anki is incredible because, as Michael Nielsen says in his literally
-life-changing blog post "Augmenting Long-Term Memory", it makes memory a choice.
+life-changing blog post "[Augmenting Long-Term Memory](https://augmentingcognition.com/ltm.html)", it makes memory a choice.
 All you have to do is make a flashcard (there is, admittedly, the meta-skill of
 making _good_ flashcards, but let's ignore that for now), and Anki will store it
 in the cloud for you, and figure out when you should see it again. If, when you
@@ -74,6 +74,7 @@ Man, it feels so good to be writing this with Vim. It's funny, it took me maybe
 clunkiness every day), and now it feels totally fluent (the basic commands at
 least)
 
+```
 gg to go to the top of the page
 I to insert at the start, A at the end 
 Search with / and ?
@@ -81,6 +82,7 @@ diw and di" and dw and cw and dd and D and etc for deleting stuff
 A key thing was swapping the caps lock and escape keys on my macbook and my arch
 linux thinkpad. Easily reaching the escape key because it's the caps lock key
 now is a huge improvement. 
+```
 
 I just love the nerdy aesthetic too. I really love making new blog posts for
 this website by using the command line, editing a new blog post with vim,
