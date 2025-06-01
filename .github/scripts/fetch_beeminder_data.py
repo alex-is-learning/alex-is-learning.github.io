@@ -68,14 +68,13 @@ def fetch_all_goals_data():
                 "goal_title": goal_title,
                 "last_updated_utc": datetime.utcnow().isoformat() + "Z"
             }
-            # Special handling for health--steps: fetch datapoints and compute average
-            if goal_slug == "health--steps":
+            # Special handling for health--steps and impact--blog-post: fetch datapoints and compute average
+            if goal_slug in ["health--steps", "impact--blog-post"]:
                 datapoints_url = f"https://www.beeminder.com/api/v1/users/{BEEMINDER_USERNAME}/goals/{goal_slug}/datapoints.json"
                 dp_response = requests.get(datapoints_url, params=params, timeout=10)
                 dp_response.raise_for_status()
                 datapoints = dp_response.json()
                 if datapoints:
-                    # Only count days with nonzero datapoints
                     days = set(dp["daystamp"] for dp in datapoints if float(dp.get("value", 0)) > 0)
                     total = sum(float(dp.get("value", 0)) for dp in datapoints)
                     num_days = len(days)

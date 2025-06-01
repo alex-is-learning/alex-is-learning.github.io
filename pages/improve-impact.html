@@ -34,9 +34,11 @@ title: Improve Impact
     </div>
     <hr>
     <div class="beeminder-goal-section">
-      <h2 id="goal-title-impact--blog-post">Blog Post Writing</h2>
+      <h2 id="goal-title-impact--blog-post">Git commits to this website</h2>
       <p>I've solved the "I love writing and find that writing in public is way more effective than writing in my Obsidian vault or whatever" issue!!! The trick is to have a "silent" blog on this site, which, unlike Substack, doesn't email people when I hit publish. Feels like the perfect Middle Way.</p>
-      <p>Cumulative hours: <span id="beeminder-hours-impact--blog-post">Loading...</span></p>
+      <p>Setting the aim to two commits per day, because typically I do a post but also some kind of bug fix or new feature too....</p>
+      <p>Total commits: <span id="beeminder-hours-impact--blog-post">Loading...</span></p>
+      <p>Average commits per day: <span id="beeminder-avg-impact--blog-post">Loading...</span></p>
       <iframe src="https://www.beeminder.com/widget?slug=impact--blog-post&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
     </div>
     <hr>
@@ -69,6 +71,7 @@ title: Improve Impact
         const publicWritingElement = document.getElementById("beeminder-hours-impact--publc-wrtng");
         // Elements for Blog Post Writing
         const blogPostElement = document.getElementById("beeminder-hours-impact--blog-post");
+        const blogPostAvgElement = document.getElementById("beeminder-avg-impact--blog-post");
 
         fetch(cacheBustUrl) // Fetches the LOCAL JSON FILE
             .then(response => {
@@ -124,6 +127,17 @@ title: Improve Impact
                     } else {
                         blogPostElement.textContent = 'N/A'; 
                         console.warn(`Data for slug "${blogPostGoalSlug}" not found in the JSON file or was undefined.`);
+                    }
+                }
+                if (blogPostAvgElement) {
+                    if (allGoalData[blogPostGoalSlug] && 
+                        allGoalData[blogPostGoalSlug].average_daily !== undefined && 
+                        allGoalData[blogPostGoalSlug].error === undefined) {
+                        blogPostAvgElement.textContent = parseFloat(allGoalData[blogPostGoalSlug].average_daily).toFixed(2);
+                    } else if (allGoalData[blogPostGoalSlug] && allGoalData[blogPostGoalSlug].error) {
+                        blogPostAvgElement.textContent = 'Error fetching goal data';
+                    } else {
+                        blogPostAvgElement.textContent = 'N/A';
                     }
                 }
             })
