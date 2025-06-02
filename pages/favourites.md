@@ -27,10 +27,11 @@ title: Favourites
 - I also really like, let's see... Fiona Apple, D'Angelo, Radiohead/The Smile, Adrienne Lenker/Big Thief, Hop Along, Ben Howard, Bon Iver, Bay Faction, The Strokes/The Voidz!!!
 - I had a huge music nerd era and it's sadly died away because I can't work to music and I don't have a car, and podcasts have subsumed music during down time. Looking forward to returning and catching up on all the stuff I've missed out on!!
 
-## Favourite Collages
+![5x5 Collage](../images/favourites/5x5.jpeg){: style="display: block; margin: 16px auto; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 8px #000;"}
+Most listened to 25 albums of all time via lastfm
 
-- [5x5 Collage](../images/favourites/5x5.jpeg)
-- [10x10 Collage](../images/favourites/10x10.jpeg)
+![10x10 Collage](../images/favourites/10x10.jpeg){: style="display: block; margin: 16px auto; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 8px #000;"}
+Most listened to 100 albums of all time via lastfm
 
 ## Favourite podcasts
 - Comedy podcasts have been my "guilty pleasure" for years, only recently converted to non-guilty, because it's important to have chill downtime (I just can't listen to nonfiction podcasts or audiobooks in my non-work hours)
