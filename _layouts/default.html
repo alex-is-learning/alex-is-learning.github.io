@@ -21,6 +21,13 @@
       <a href="{{ '/' | relative_url }}" style="font-weight:bold;">Home</a>
     </div>
     {{ content }}
+    <p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
+      Last updated: <span id="last-updated"></span>
+    </p>
+    <script>
+      document.getElementById('last-updated').textContent =
+        new Date(document.lastModified).toISOString().slice(0, 10);
+    </script>
   </div>
   <script>
     const modeToggle = document.getElementById('mode-toggle');

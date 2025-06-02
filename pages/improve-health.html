@@ -34,9 +34,6 @@ title: Improve Health
   <iframe src="https://www.beeminder.com/widget?slug=health--steps&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
 </div>
 
-<p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
-  Last updated: <span id="last-updated"></span>
-</p>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const dataFilePath = '../assets/data/beeminder_goals_data.json';
@@ -101,6 +98,4 @@ title: Improve Health
         });
       });
   });
-  document.getElementById('last-updated').textContent =
-    new Date(document.lastModified).toLocaleDateString();
 </script>
