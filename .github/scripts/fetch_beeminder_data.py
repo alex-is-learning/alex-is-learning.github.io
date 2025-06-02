@@ -27,7 +27,10 @@ GOAL_SLUGS_TO_FETCH = [
     "health--weights",
     "heath--jump-rope",
     "impact--blog-post",
-    "health--steps"
+    "health--steps",
+    # Added new goals
+    "impact--operations",
+    "impact--systems-thi"
 ]
 # The auth token will be read from GitHub Secrets (environment variable)
 BEEMINDER_AUTH_TOKEN = os.environ.get("BEEMINDER_AUTH_TOKEN")
@@ -68,8 +71,8 @@ def fetch_all_goals_data():
                 "goal_title": goal_title,
                 "last_updated_utc": datetime.utcnow().isoformat() + "Z"
             }
-            # Special handling for health--steps and impact--blog-post: fetch datapoints and compute average
-            if goal_slug in ["health--steps", "impact--blog-post"]:
+            # Special handling for health--steps, impact--blog-post, impact--operations, impact--systems-thi: fetch datapoints and compute average
+            if goal_slug in ["health--steps", "impact--blog-post", "impact--operations", "impact--systems-thi"]:
                 datapoints_url = f"https://www.beeminder.com/api/v1/users/{BEEMINDER_USERNAME}/goals/{goal_slug}/datapoints.json"
                 dp_response = requests.get(datapoints_url, params=params, timeout=10)
                 dp_response.raise_for_status()

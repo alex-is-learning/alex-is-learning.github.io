@@ -42,6 +42,20 @@ title: Improve Impact
       <iframe src="https://www.beeminder.com/widget?slug=impact--blog-post&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
     </div>
     <hr>
+    <div class="beeminder-goal-section">
+      <h2 id="goal-title-impact--operations">Operations Work</h2>
+      <p>Tracking my time spent on operations-related tasks and projects.</p>
+      <p>Cumulative hours: <span id="beeminder-hours-impact--operations">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=impact--operations&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
+    <div class="beeminder-goal-section">
+      <h2 id="goal-title-impact--systems-thi">Systems Thinking</h2>
+      <p>Tracking my time spent learning and applying systems thinking.</p>
+      <p>Cumulative hours: <span id="beeminder-hours-impact--systems-thi">Loading...</span></p>
+      <iframe src="https://www.beeminder.com/widget?slug=impact--systems-thi&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+    </div>
+    <hr>
     <h2>Learning about the nuclear risk cause area</h2>
   <p>Sadly I didn't make a nuclear beeminder when I did my ~12 hours of study in 3 days but look, I've got &gt;400 flashcards and could wax poetic about NPT vs CTBT vs TPNW, the failures of the NPT, what the IAEA does re: article III of the NPT, how article VI is kind of a scam hence the TPNW, how philanthropic funding has ~halved, etc. Seriously let me ramble at you give me a call wait where are you going come back</p>
   <img src="../images/nuclear-flashcards.png" alt="Nuclear flashcards" style="display:block;margin:16px auto;max-width:320px;border-radius:8px;box-shadow:0 0 8px #000;">
@@ -64,6 +78,8 @@ title: Improve Impact
         const aiSafetyGoalSlug = "impact--ai-safety";
         const publicWritingGoalSlug = "impact--publc-wrtng";
         const blogPostGoalSlug = "impact--blog-post";
+        const operationsGoalSlug = "impact--operations";
+        const systemsThiGoalSlug = "impact--systems-thi";
 
         // Elements for AI Safety
         const displayElement = document.getElementById("beeminder-hours");
@@ -72,6 +88,10 @@ title: Improve Impact
         // Elements for Blog Post Writing
         const blogPostElement = document.getElementById("beeminder-hours-impact--blog-post");
         const blogPostAvgElement = document.getElementById("beeminder-avg-impact--blog-post");
+        // Elements for Operations
+        const operationsElement = document.getElementById("beeminder-hours-impact--operations");
+        // Elements for Systems Thinking
+        const systemsThiElement = document.getElementById("beeminder-hours-impact--systems-thi");
 
         fetch(cacheBustUrl) // Fetches the LOCAL JSON FILE
             .then(response => {
@@ -140,6 +160,32 @@ title: Improve Impact
                         blogPostAvgElement.textContent = 'N/A';
                     }
                 }
+                // Operations
+                if (operationsElement) {
+                    if (allGoalData[operationsGoalSlug] && 
+                        allGoalData[operationsGoalSlug].current_value !== undefined && 
+                        allGoalData[operationsGoalSlug].error === undefined) {
+                        const hours = parseFloat(allGoalData[operationsGoalSlug].current_value).toFixed(2);
+                        operationsElement.textContent = `${hours}`; 
+                    } else if (allGoalData[operationsGoalSlug] && allGoalData[operationsGoalSlug].error) {
+                        operationsElement.textContent = 'Error fetching goal data';
+                    } else {
+                        operationsElement.textContent = 'N/A'; 
+                    }
+                }
+                // Systems Thinking
+                if (systemsThiElement) {
+                    if (allGoalData[systemsThiGoalSlug] && 
+                        allGoalData[systemsThiGoalSlug].current_value !== undefined && 
+                        allGoalData[systemsThiGoalSlug].error === undefined) {
+                        const hours = parseFloat(allGoalData[systemsThiGoalSlug].current_value).toFixed(2);
+                        systemsThiElement.textContent = `${hours}`; 
+                    } else if (allGoalData[systemsThiGoalSlug] && allGoalData[systemsThiGoalSlug].error) {
+                        systemsThiElement.textContent = 'Error fetching goal data';
+                    } else {
+                        systemsThiElement.textContent = 'N/A'; 
+                    }
+                }
             })
             .catch(error => {
                 console.error('Error fetching or processing local Beeminder goals data:', error);
@@ -151,6 +197,12 @@ title: Improve Impact
                 }
                 if (blogPostElement) {
                     blogPostElement.textContent = 'Error loading data.';
+                }
+                if (operationsElement) {
+                    operationsElement.textContent = 'Error loading data.';
+                }
+                if (systemsThiElement) {
+                    systemsThiElement.textContent = 'Error loading data.';
                 }
             });
     });
