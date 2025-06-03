@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<article class="learning-log-entry">
+  <div style="margin: 16px 0 24px 0;">
+    <a href="{{ '/learning-log/' | relative_url }}" style="font-weight:bold;">&larr; Back to Learning Log</a>
+  </div>
+  <h1>{{ page.title }}</h1>
+  {% if page.topic %}<p><strong>Topic:</strong> {{ page.topic }}</p>{% endif %}
+  {% if page.date %}<p><strong>Date:</strong> {{ page.date | date: "%b %d, %Y" }}</p>{% endif %}
+  <div>
+    {{ content | markdownify }}
+  </div>
+  <hr>
+  <div class="learning-nav">
+    {% assign topic_posts = site.pages | where: "layout", "learning" | where: "topic", page.topic | where_exp: "item", "item.published != false" | sort: "date" %}
+    {% assign current_index = nil %}
+    {% for post in topic_posts %}
+      {% if post.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+    {% if current_index != nil %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign next_index = current_index | plus: 1 %}
+      {% if prev_index >= 0 %}
+        {% assign prev_post = topic_posts[prev_index] %}
+        {% if prev_post.url %}
+          <a href="{{ prev_post.url | relative_url }}" style="cursor:pointer;">&larr; Previous in {{ page.topic }}</a>
+        {% endif %}
+      {% endif %}
+      {% if next_index < topic_posts.size %}
+        {% assign next_post = topic_posts[next_index] %}
+        {% if next_post.url %}
+          <a href="{{ next_post.url | relative_url }}" style="float:right; cursor:pointer;">Next in {{ page.topic }} &rarr;</a>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  </div>
+</article>

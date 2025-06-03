@@ -21,5 +21,8 @@ sass:
 collections:
   posts:
     permalink: /blog/:slug/
+  learning:
+    output: true
+    permalink: /learning/:name/
 
 timezone: Europe/London

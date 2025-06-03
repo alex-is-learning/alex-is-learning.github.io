@@ -23,7 +23,24 @@ title: Improve Impact
 <p>
     Cumulative hours spent: <span id="beeminder-hours">Loading...</span>
 </p>
-<iframe src="https://www.beeminder.com/widget?slug=impact--ai-safety&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+<iframe src="https://www.beeminder.com/widget?slug=impact--ai-safety&username=alexislearning" height="185px" width="230px" frameborder="0px" style="display:block;margin-bottom:0.5em;"></iframe>
+
+<!-- AI Safety Learning Posts List -->
+<div class="ai-safety-posts" style="margin-top:0.5em;">
+  <h3>Recent AI Safety Learning Posts</h3>
+  <ul>
+    {% assign ai_safety_posts = site.pages | where: "layout", "learning" | where: "topic", "AI Safety" | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
+    {% for post in ai_safety_posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span style="color: #888; font-size: 0.9em;">({{ post.date | date: "%Y-%m-%d" }})</span>
+      </li>
+    {% endfor %}
+    {% if ai_safety_posts == empty %}
+      <li>No AI Safety learning posts found.</li>
+    {% endif %}
+  </ul>
+</div>
 
 <hr>
     <div class="beeminder-goal-section">

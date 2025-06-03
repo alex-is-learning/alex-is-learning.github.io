@@ -1,0 +1,23 @@
+---
+layout: default
+title: Learning Log
+permalink: /learning-log/index.html
+---
+
+<h1>Learning Log</h1>
+<p><a href="{{ '/pages/reading.html' | relative_url }}">What I'm reading</a></p>
+{% assign learning_entries = site.pages | where: "layout", "learning" | where_exp: "item", "item.published != false" | sort: "topic" %}
+{% assign topics = learning_entries | map: 'topic' | uniq | sort %}
+{% for topic in topics %}
+  <h2>{{ topic }}</h2>
+  <ul>
+    {% for entry in learning_entries %}
+      {% if entry.topic == topic %}
+        <li>
+          <a href="{{ entry.url | relative_url }}">{{ entry.title }}</a>
+          <span style="color: #888;">({{ entry.date | date: "%b %d, %Y" }})</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
