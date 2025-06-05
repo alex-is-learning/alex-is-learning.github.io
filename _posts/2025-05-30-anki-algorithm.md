@@ -3,7 +3,7 @@ layout: post
 title: "The new Anki algorithm made me weep" 
 date: 2025-05-30 16:48
 published: true 
-slug: "anki-algorithm"
+slug: "2025-05-30-anki-algorithm"
 ---
 
 ## (Ok not really but you know what I mean) 

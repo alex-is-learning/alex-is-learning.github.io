@@ -3,21 +3,8 @@ layout: post
 # Basic Post Information (Essential)
 title: "My Learning Funnel"
 date: 2025-05-27
-# Categorisation (Optional)
-# categories:
-#   - Learning
-#   - Tools
-# Tagging (Optional)
-# tags:
-#   - learning
-#   - tools
-#   - productivity
-# Featured Image (Optional)
-# image:
-#   path: /assets/images/posts/placeholder-image.jpg
-#   alt: "A descriptive caption for the image"
-#   caption: "Optional image caption"
 published: true
+slug: "2025-05-27-learning-funnel"
 ---
 
 (See also [Improve Systems]({{ '/pages/improve-systems.html' | relative_url }}))

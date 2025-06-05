@@ -3,11 +3,7 @@ layout: post
 title: "Adding functionality to the Arch Linux laptop" 
 date: 2025-05-31 17:26
 published: true 
-# slug: "optional-custom-slug"      
-
-# Syntax reminder: 
-# [link text](url)
-# ![alt text](/path/to/image.jpg)
+slug: "2025-05-31-arch"
 ---
 
 ## Daily post hello world

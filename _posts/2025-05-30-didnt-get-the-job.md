@@ -3,7 +3,7 @@ layout: post
 title: "I didn't get the job!" 
 date: 2025-05-30 16:24 
 published: true 
-slug: "I-didnt-get-the-job"
+slug: "2025-05-30-I-didnt-get-the-job"
 ---
 
 ## Post Content
