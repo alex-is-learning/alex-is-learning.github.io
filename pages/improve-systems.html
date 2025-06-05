@@ -75,3 +75,54 @@ title: Improve Systems
 <p>A simple app that fixes the Mac default behaviour where you only have 1 clipboard slot, so as soon as you copy something new, whatever was just in your clipboard gets lost. Lets you access a history of copied items.</p>
 </div>
 <hr>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dataFilePath = '../assets/data/beeminder_goals_data.json';
+    const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+    const systemsGoalSlugs = [
+        "systems--vim",
+        "systems--touch-typ"
+    ];
+    fetch(cacheBustUrl)
+        .then(response => {
+            if (!response.ok) {
+                console.warn(`Could not fetch ${dataFilePath}. Status: ${response.status}`);
+                throw new Error(`Network response was not ok: ${response.statusText} - ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(allGoalData => {
+            systemsGoalSlugs.forEach(slug => {
+                const hoursElementId = `beeminder-hours-${slug}`;
+                const hoursDisplayElement = document.getElementById(hoursElementId);
+                if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+                    const goalData = allGoalData[slug];
+                    if (hoursDisplayElement && goalData.current_value !== undefined) {
+                        hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
+                    } else if (hoursDisplayElement) {
+                        hoursDisplayElement.textContent = 'N/A';
+                    }
+                } else {
+                    if (hoursDisplayElement) {
+                        hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+                    }
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching or processing local Beeminder goals data:', error);
+            systemsGoalSlugs.forEach(slug => {
+                const hoursElementId = `beeminder-hours-${slug}`;
+                const hoursDisplayElement = document.getElementById(hoursElementId);
+                if (hoursDisplayElement) {
+                    hoursDisplayElement.textContent = 'Error';
+                }
+            });
+        });
+});
+</script>
+<hr>
+<div style="text-align:center;margin:32px 0 16px 0;">
+  <a href="improve-thinking.html" style="margin-right:32px;font-size:1.1em;font-weight:bold;text-decoration:underline;">&larr; Back: Improve Thinking</a>
+  <a href="improve-health.html" style="font-size:1.1em;font-weight:bold;text-decoration:underline;">Next: Improve Health &rarr;</a>
+</div>
