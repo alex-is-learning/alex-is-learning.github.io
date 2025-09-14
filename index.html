@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex is Learning</title>
+  <meta name="description" content="Alex — notebook, projects, and experiments. A clean, fast landing page." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23000000'/%3E%3Ctext x='50' y='58' font-size='54' text-anchor='middle' fill='white' font-family='system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif'%3EA%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --bg-elev: #121214;
+      --text: #e6e6e8;
+      --muted: #a9a9b2;
+      --primary: #6ee7ff; /* soft cyan */
+      --accent: #b892ff; /* lilac */
+      --ok: #79f2c0;
+      --border: #242428;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #ffffff; --bg-elev: #f6f7f9; --text: #0d0d10; --muted: #4c4c57; --border: #e7e7ee; }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(110,231,255,.25), transparent 60%),
+                  radial-gradient(1000px 800px at -10% 10%, rgba(184,146,255,.20), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(8px);
+      background: color-mix(in srgb, var(--bg), transparent 45%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); box-shadow: 0 0 20px rgba(110,231,255,.5); }
+    .links { display: flex; gap: 18px; align-items: center; }
+    .links a { padding: 8px 10px; border-radius: 10px; color: var(--muted); }
+    .links a:hover { background: var(--bg-elev); color: var(--text); }
+    .cta { padding: 10px 14px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #0b0b0c; font-weight: 700; box-shadow: var(--shadow); }
+    .cta:hover { filter: saturate(110%); }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; padding: 64px 0 36px; }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding-top: 32px; } }
+    .badge { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); background: var(--bg-elev); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; }
+    h1 { font-size: clamp(32px, 5.5vw, 64px); line-height: 1.05; margin: 16px 0 12px; letter-spacing: -.5px; }
+    .lead { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); max-width: 58ch; }
+    .hero-actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+    .ghost { padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-elev); color: var(--text); }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 44px 0 16px; }
+    @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); transition: transform .2s ease; }
+    .card:hover { transform: translateY(-3px); }
+    .tag { display: inline-block; font-size: 12px; color: var(--muted); background: rgba(255,255,255,.04); border: 1px solid var(--border); padding: 4px 8px; border-radius: 999px; }
+    .card h3 { margin: 10px 0 6px; font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .section { padding: 36px 0 64px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--muted); }
+    .social { display: flex; gap: 12px; }
+    .pill { border: 1px solid var(--border); padding: 8px 12px; border-radius: 999px; background: var(--bg-elev); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Alex is Learning</span>
+      </a>
+      <nav class="links" aria-label="Primary">
+        <a href="/notebook/">Notebook</a>
+        <a href="/scrapbook/">Scrapbook</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a class="cta" href="#contact">Say hi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <span class="badge">💡 Creative R&D • humane web</span>
+        <h1>Clean, kind, and a little curious.</h1>
+        <p class="lead">I’m Alex — tinkering in public. This is the front door to my living notebook, small experiments, and longer projects about learning well.</p>
+        <div class="hero-actions">
+          <a class="cta" href="/notebook/">Open the Notebook</a>
+          <a class="ghost" href="#projects">See projects</a>
+          <a class="ghost" href="#about">About me</a>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+          <div style="font-size:56px; line-height:1">🗒️</div>
+          <h3 style="margin:8px 0 6px">Working in public</h3>
+          <p style="max-width:46ch">Notes, drafts, and attempts at attention. No perfection theater, just incremental clarity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2 style="font-size:28px; margin:0 0 10px">Projects</h2>
+      <p class="lead" style="font-size:18px">A few current and recent things.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">Writing</span>
+          <h3><a href="/notebook/">Notebook — ongoing</a></h3>
+          <p>Field notes on learning, attention, and humane tools.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Prototype</span>
+          <h3><a href="#">Summer 2025 Site</a></h3>
+          <p>A seasonal microsite / lab. Light, fast, and slightly playful.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Archive</span>
+          <h3><a href="/scrapbook/">Scrapbook</a></h3>
+          <p>Fragments worth keeping: quotes, textures, and small delights.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section grid-2" id="about">
+      <div class="card">
+        <h3>About</h3>
+        <p>I’m a wannabe artist who cares about radical specificity and earned vulnerability. I build simple web things and write to think. If a tool helps people pay real attention, I’m probably into it.</p>
+      </div>
+      <div class="card">
+        <h3>Now</h3>
+        <ul style="margin:0; padding-left:18px">
+          <li>Trying a daily scene practice.</li>
+          <li>Collecting humane web patterns.</li>
+          <li>Rebuilding this site to be calmer and faster.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="card" style="display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap;">
+        <div>
+          <h3>Say hi</h3>
+          <p class="lead" style="font-size:16px">DMs open. If you shipped something small and kind, I want to see it.</p>
+        </div>
+        <div class="social">
+          <a class="pill" href="mailto:hello@alexislearning.me">Email</a>
+          <a class="pill" href="https://github.com/alex-is-learning">GitHub</a>
+          <a class="pill" href="/notebook/">Notebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+      <span>© <span id="year"></span> Alex is Learning</span>
+      <span style="color:var(--muted)">Built with plain HTML & CSS — fast by default</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
