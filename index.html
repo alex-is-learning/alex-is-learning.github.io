@@ -421,9 +421,11 @@
 
     .group:last-child { margin-bottom: 0; }
 
-    /* Site is sunsetting (see the stamp at the top) — a retired group stays readable and clickable,
-       but reads as inactive so nobody starts here. */
-    .group.retired { opacity: 0.45; }
+    /* Site is sunsetting (see the stamp at the top) — a retired group reads as inactive so nobody
+       starts here, but must stay legible. The fade goes on the list, NOT the label: the labels are
+       already only 3.95:1 on this background, so fading one would push it under any usable contrast.
+       0.65 keeps the link at ~4.9:1, over the WCAG AA floor of 4.5:1. Do not lower it. */
+    .group.retired ol { opacity: 0.65; }
 
     .group-label {
       font-family: var(--serif-display);
