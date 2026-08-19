@@ -421,6 +421,10 @@
 
     .group:last-child { margin-bottom: 0; }
 
+    /* Site is sunsetting (see the stamp at the top) — a retired group stays readable and clickable,
+       but reads as inactive so nobody starts here. */
+    .group.retired { opacity: 0.45; }
+
     .group-label {
       font-family: var(--serif-display);
       font-variation-settings: "opsz" 9;
@@ -613,8 +617,8 @@
 
       <div class="link-groups">
 
-        <div class="group">
-          <p class="group-label">Offerings</p>
+        <div class="group retired">
+          <p class="group-label">Offerings (retired)</p>
           <ol>
             <li><a href="https://getmomentum.site/"><span class="label">Momentum Coaching</span><span class="arrow">↗</span></a></li>
           </ol>
